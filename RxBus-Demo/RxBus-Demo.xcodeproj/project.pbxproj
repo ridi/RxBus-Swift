@@ -96,6 +96,7 @@
 			buildConfigurationList = 8394D7D31F7CF3140078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo" */;
 			buildPhases = (
 				E06EFC777E48B45D86456579 /* [CP] Check Pods Manifest.lock */,
+				8394D7D81F7D00440078A45B /* SwiftLint Script */,
 				8394D7BD1F7CF3140078A45B /* Sources */,
 				8394D7BE1F7CF3140078A45B /* Frameworks */,
 				8394D7BF1F7CF3140078A45B /* Resources */,
@@ -193,6 +194,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo/Pods-RxBus-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		8394D7D81F7D00440078A45B /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\\n\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\n    current=$(swiftlint version)\n    require=\"0.20.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi";
 		};
 		E06EFC777E48B45D86456579 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

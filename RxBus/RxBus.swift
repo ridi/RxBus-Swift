@@ -1,7 +1,17 @@
 import RxSwift
 
-final class RxBus {
-    static let shared = RxBus()
+public protocol BusEvent {
+    static var name: String { get }
+}
+
+public extension BusEvent {
+    static var name: String {
+        return "\(self)"
+    }
+}
+
+public final class RxBus {
+    public static let shared = RxBus()
     
     private init() { }
     
@@ -48,7 +58,7 @@ final class RxBus {
     
     // MARK: -
     
-    func asObservable<T: Event>(event: T.Type, sticky: Bool = false, priority: Int = 0) -> Observable<T> {
+    public func asObservable<T: BusEvent>(event: T.Type, sticky: Bool = false, priority: Int = 0) -> Observable<T> {
         if subjects[event.name] == nil {
             subjects[event.name] = [priority: PublishSubject<T>()]
         } else if subjects[event.name]![priority] == nil {
@@ -69,7 +79,7 @@ final class RxBus {
         })
     }
     
-    func post<T: Event>(event: T, sticky: Bool = false) {
+    public func post<T: BusEvent>(event: T, sticky: Bool = false) {
         let eventName = "\(type(of: event))"
         if sticky {
             stickyMap[eventName] = event
@@ -82,11 +92,11 @@ final class RxBus {
         }
     }
     
-    func stickyEvent<T: Event>(_ event: T.Type) -> T? {
+    public func stickyEvent<T: BusEvent>(_ event: T.Type) -> T? {
         return stickyMap[event.name] as? T
     }
     
-    func removeSticky<T: Event>(event: T.Type) -> T? {
+    public func removeSticky<T: BusEvent>(event: T.Type) -> T? {
         return stickyMap.removeValue(forKey: event.name) as? T
     }
     
@@ -108,7 +118,7 @@ final class RxBus {
         return observable
     }
     
-    func asObservable(notificationName name: Notification.Name, sticky: Bool = false, priority: Int = 0) -> Observable<Notification> {
+    public func asObservable(notificationName name: Notification.Name, sticky: Bool = false, priority: Int = 0) -> Observable<Notification> {
         if subjects[name.rawValue] == nil {
             subjects[name.rawValue] = [priority: makeNotificationObserable(name: name, priority: priority)]
         } else if subjects[name.rawValue]![priority] == nil {
@@ -131,12 +141,12 @@ final class RxBus {
         })
     }
     
-    func post(notificationName name: Notification.Name, userInfo: [AnyHashable : Any]? = nil, sticky: Bool = false) {
+    public func post(notificationName name: Notification.Name, userInfo: [AnyHashable : Any]? = nil, sticky: Bool = false) {
         let notification = Notification(name: name, object: nil, userInfo: userInfo)
         post(notification: notification, sticky: sticky)
     }
     
-    func post(notification: Notification, sticky: Bool = false) {
+    public func post(notification: Notification, sticky: Bool = false) {
         let name = notification.name.rawValue
         if sticky {
             stickyMap[name] = notification
@@ -149,11 +159,11 @@ final class RxBus {
         }
     }
     
-    func stickyNotification(name: Notification.Name) -> Notification? {
+    public func stickyNotification(name: Notification.Name) -> Notification? {
         return stickyMap[name.rawValue] as? Notification
     }
     
-    func removeStickyNotification(name: Notification.Name) -> Notification? {
+    public func removeStickyNotification(name: Notification.Name) -> Notification? {
         return stickyMap.removeValue(forKey: name.rawValue) as? Notification
     }
 }

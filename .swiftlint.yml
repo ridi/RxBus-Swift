@@ -36,4 +36,4 @@ included:
   - RxBus-Demo
 
 excluded:
-  - Pods
+  - RxBus-Demo/Pods
