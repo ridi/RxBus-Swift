@@ -38,10 +38,17 @@ $ pod install
 ```
 
 ## Usage
+
+#### Imports
+
 ```swift
 import RxBus
 import RxSwift
+```
 
+#### Defining Events struct
+
+```swift
 // Defining Events struct
 struct Events {
     struct LoggedIn: BusEvent {
@@ -52,65 +59,99 @@ struct Events {
         let tid: Int
     }
 }
+```
 
-// Defining Custom Notification
-extension Notification.Name {
-    static let ViewControllerDidLoad = Notification.Name("ViewControllerDidLoadNotification")
-}
+#### Event subscription/posting
 
-let bus = RxBus.shared
-let disposeBag = DisposeBag()
-
-// Event subscription/posting
-bus.asObservable(event: Events.LoggedIn.self).subscribe { event in
+```swift
+RxBus.shared.asObservable(event: Events.LoggedIn.self).subscribe { event in
     print("LoggedIn, userId = \(event.element!.userId)")
 }.addDisposableTo(disposeBag)
-bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
-// output:
-// LoggedIn, userId = davin.ahn
+RxBus.shared.post(event: Events.LoggedIn(userId: "davin.ahn"))
+```
 
-// Sticky events
-        
-bus.post(event: Events.LoggedOut(), sticky: true)
-bus.asObservable(event: Events.LoggedOut.self, sticky: true).subscribe { _ in
+```
+LoggedIn, userId = davin.ahn
+```
+
+#### Sticky events
+
+```swift
+RxBus.shared.post(event: Events.LoggedOut(), sticky: true)
+RxBus.shared.asObservable(event: Events.LoggedOut.self, sticky: true).subscribe { _ in
     print("LoggedOut")
 }.addDisposableTo(disposeBag)
-// output:
-// LoggedOut
-        
-// Subscription priority
-        
-bus.asObservable(event: Events.Purchased.self, sticky: false, priority: -1).subscribe { event in
+```
+
+```
+LoggedOut
+```
+
+#### Subscription priority
+
+```swift
+RxBus.shared.asObservable(event: Events.Purchased.self, sticky: false, priority: -1).subscribe { event in
     print("Purchased(priority: -1), tid = \(event.element!.tid)")
 }.addDisposableTo(disposeBag)
-bus.asObservable(event: Events.Purchased.self, sticky: false, priority: 1).subscribe { event in
+RxBus.shared.asObservable(event: Events.Purchased.self, sticky: false, priority: 1).subscribe { event in
     print("Purchased(priority: 1), tid = \(event.element!.tid)")
 }.addDisposableTo(disposeBag)
-bus.asObservable(event: Events.Purchased.self).subscribe { event in
+RxBus.shared.asObservable(event: Events.Purchased.self).subscribe { event in
     print("Purchased(priority: 0 = default), tid = \(event.element!.tid)")
 }.addDisposableTo(disposeBag)
-bus.post(event: Events.Purchased(tid: 1001))
-// output:
-// Purchased(priority: 1), tid = 1001
-// Purchased(priority: 0 = default), tid = 1001
-// Purchased(priority: -1), tid = 1001
-        
-// System Notification subscription
-        
-bus.asObservable(notificationName: .UIKeyboardWillShow).subscribe { event in
-    print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo!)")
+RxBus.shared.post(event: Events.Purchased(tid: 1001))
+```
+
+```
+Purchased(priority: 1), tid = 1001
+Purchased(priority: 0 = default), tid = 1001
+Purchased(priority: -1), tid = 1001
+```
+
+#### System Notification subscription
+
+```swift
+RxBus.shared.asObservable(notificationName: .UIKeyboardWillShow).subscribe { event in
+    print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo)")
 }.addDisposableTo(disposeBag)
 textField.becomeFirstResponder()
-// output
-// UIKeyboardWillShowNotification, userInfo: ...
-        
-// Custom Notification subscription/posting
-        
-bus.post(notificationName: .ViewControllerDidLoad, userInfo: ["message": "Hi~"], sticky: true)
-bus.asObservable(notificationName: .ViewControllerDidLoad, sticky: true).subscribe { event in
-    print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo!)")
+```
+
+```
+UIKeyboardWillShowNotification, userInfo: [AnyHashable("UIKeyboardCenterBeginUserInfoKey"): NSPoint: {160, 694.5}, AnyHashable("UIKeyboardIsLocalUserInfoKey"): 1, AnyHashable("UIKeyboardCenterEndUserInfoKey"): NSPoint: {160, 441.5}, AnyHashable("UIKeyboardBoundsUserInfoKey"): NSRect: {{0, 0}, {320, 253}}, AnyHashable("UIKeyboardFrameEndUserInfoKey"): NSRect: {{0, 315}, {320, 253}}, AnyHashable("UIKeyboardAnimationCurveUserInfoKey"): 7, AnyHashable("UIKeyboardFrameBeginUserInfoKey"): NSRect: {{0, 568}, {320, 253}}, AnyHashable("UIKeyboardAnimationDurationUserInfoKey"): 0.25]
+```
+
+#### Defining Custom Notification
+
+```swift
+extension Notification.Name {
+    static let Custom = Notification.Name("CustomNotification")
+}
+```
+
+#### Custom Notification subscription/posting
+
+```swift
+RxBus.shared.asObservable(notificationName: .Custom).subscribe { event in
+    print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo)")
 }.addDisposableTo(disposeBag)
-// output:
-// ViewControllerDidLoadNotification, userInfo: [AnyHashable("message"): "Hi~"]
+RxBus.shared.post(notificationName: .Custom, userInfo: ["message": "Hi~"])
+```
+
+```
+Custom, userInfo: [AnyHashable("message"): "Hi~"]
+```
+
+#### Sticky Notifications
+
+```swift
+RxBus.shared.post(notificationName: .Custom, userInfo: ["value": 5], sticky: true)
+RxBus.shared.asObservable(notificationName: .Custom, sticky: true).subscribe { event in
+    print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo)")
+}.addDisposableTo(disposeBag)
+```
+
+```
+Custom, userInfo: [AnyHashable("value"): 5]
 ```
 
