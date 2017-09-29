@@ -7,25 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12BCB0C76EA94853013A92F4 /* Pods_RxBus_Demo_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67592A8E1082825AE9E573E9 /* Pods_RxBus_Demo_tvOS.framework */; };
 		8394D7C51F7CF3140078A45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7C41F7CF3140078A45B /* AppDelegate.swift */; };
 		8394D7C71F7CF3140078A45B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7C61F7CF3140078A45B /* ViewController.swift */; };
 		8394D7CA1F7CF3140078A45B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8394D7C81F7CF3140078A45B /* Main.storyboard */; };
 		8394D7CC1F7CF3140078A45B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8394D7CB1F7CF3140078A45B /* Assets.xcassets */; };
 		8394D7CF1F7CF3140078A45B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8394D7CD1F7CF3140078A45B /* LaunchScreen.storyboard */; };
-		A9552D408D75CCCD121D72D8 /* Pods_RxBus_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C2BEE5E2336A9CAE76E9E35 /* Pods_RxBus_Demo.framework */; };
+		8394D7E01F7DD4030078A45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7DF1F7DD4030078A45B /* AppDelegate.swift */; };
+		8394D7E21F7DD4030078A45B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7E11F7DD4030078A45B /* ViewController.swift */; };
+		8394D7E41F7DD4030078A45B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8394D7E31F7DD4030078A45B /* Assets.xcassets */; };
+		8394D7E71F7DD4030078A45B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8394D7E51F7DD4030078A45B /* Main.storyboard */; };
+		8394D81D1F7DED2E0078A45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D81C1F7DED2E0078A45B /* AppDelegate.swift */; };
+		8394D81F1F7DED2E0078A45B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D81E1F7DED2E0078A45B /* ViewController.swift */; };
+		8394D8221F7DED2E0078A45B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8394D8201F7DED2E0078A45B /* Main.storyboard */; };
+		8394D8241F7DED2E0078A45B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8394D8231F7DED2E0078A45B /* Assets.xcassets */; };
+		99F9408215B089DB480D20F7 /* Pods_RxBus_Demo_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B785A32B1494BB53EA65BC11 /* Pods_RxBus_Demo_macOS.framework */; };
+		B61DF8532A1B923B6B713278 /* Pods_RxBus_Demo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD06469F3B39498FEF5C1563 /* Pods_RxBus_Demo_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		18DF5E2E7DC65BCDB29C9DAA /* Pods-RxBus-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo/Pods-RxBus-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		1DCCCE0270D015DD0663A503 /* Pods-RxBus-Demo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		3C2BEE5E2336A9CAE76E9E35 /* Pods_RxBus_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8394D7C11F7CF3140078A45B /* RxBus-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBus-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4476F11D6A3BB5B85E5BB0CC /* Pods-RxBus-Demo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		521AF436FC73D199A4B70CD7 /* Pods-RxBus-Demo-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-macOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS.debug.xcconfig"; sourceTree = "<group>"; };
+		67592A8E1082825AE9E573E9 /* Pods_RxBus_Demo_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8394D7C11F7CF3140078A45B /* RxBus-Demo-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBus-Demo-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8394D7C41F7CF3140078A45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8394D7C61F7CF3140078A45B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8394D7C91F7CF3140078A45B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8394D7CB1F7CF3140078A45B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8394D7CE1F7CF3140078A45B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8394D7D01F7CF3140078A45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CDEEA42A5DCC456C6DA1C80E /* Pods-RxBus-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo/Pods-RxBus-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		8394D7DD1F7DD4030078A45B /* RxBus-Demo-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBus-Demo-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8394D7DF1F7DD4030078A45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8394D7E11F7DD4030078A45B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8394D7E31F7DD4030078A45B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8394D7E61F7DD4030078A45B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8394D7E81F7DD4030078A45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8394D81A1F7DED2E0078A45B /* RxBus-Demo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBus-Demo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8394D81C1F7DED2E0078A45B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8394D81E1F7DED2E0078A45B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8394D8211F7DED2E0078A45B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8394D8231F7DED2E0078A45B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8394D8251F7DED2E0078A45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E098F5CA3DFA5F03B1A0471 /* Pods-RxBus-Demo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		B220B4C357B786AFF5E9E243 /* Pods-RxBus-Demo-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS.release.xcconfig"; sourceTree = "<group>"; };
+		B785A32B1494BB53EA65BC11 /* Pods_RxBus_Demo_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B90F5193380B70AC5F4F1B69 /* Pods-RxBus-Demo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BD06469F3B39498FEF5C1563 /* Pods_RxBus_Demo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +62,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9552D408D75CCCD121D72D8 /* Pods_RxBus_Demo.framework in Frameworks */,
+				B61DF8532A1B923B6B713278 /* Pods_RxBus_Demo_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8394D7DA1F7DD4030078A45B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99F9408215B089DB480D20F7 /* Pods_RxBus_Demo_macOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8394D8171F7DED2E0078A45B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12BCB0C76EA94853013A92F4 /* Pods_RxBus_Demo_tvOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				3C2BEE5E2336A9CAE76E9E35 /* Pods_RxBus_Demo.framework */,
+				BD06469F3B39498FEF5C1563 /* Pods_RxBus_Demo_iOS.framework */,
+				B785A32B1494BB53EA65BC11 /* Pods_RxBus_Demo_macOS.framework */,
+				67592A8E1082825AE9E573E9 /* Pods_RxBus_Demo_tvOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -51,7 +99,9 @@
 		8394D7B81F7CF3140078A45B = {
 			isa = PBXGroup;
 			children = (
-				8394D7C31F7CF3140078A45B /* RxBus-Demo */,
+				8394D7C31F7CF3140078A45B /* RxBus-Demo-iOS */,
+				8394D7DE1F7DD4030078A45B /* RxBus-Demo-macOS */,
+				8394D81B1F7DED2E0078A45B /* RxBus-Demo-tvOS */,
 				8394D7C21F7CF3140078A45B /* Products */,
 				DBC6BC38BED26F5D0FC51548 /* Pods */,
 				4E128B76F094689F9CFC4AAD /* Frameworks */,
@@ -61,12 +111,14 @@
 		8394D7C21F7CF3140078A45B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8394D7C11F7CF3140078A45B /* RxBus-Demo.app */,
+				8394D7C11F7CF3140078A45B /* RxBus-Demo-iOS.app */,
+				8394D7DD1F7DD4030078A45B /* RxBus-Demo-macOS.app */,
+				8394D81A1F7DED2E0078A45B /* RxBus-Demo-tvOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8394D7C31F7CF3140078A45B /* RxBus-Demo */ = {
+		8394D7C31F7CF3140078A45B /* RxBus-Demo-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				8394D7C41F7CF3140078A45B /* AppDelegate.swift */,
@@ -76,14 +128,42 @@
 				8394D7CD1F7CF3140078A45B /* LaunchScreen.storyboard */,
 				8394D7D01F7CF3140078A45B /* Info.plist */,
 			);
-			path = "RxBus-Demo";
+			path = "RxBus-Demo-iOS";
+			sourceTree = "<group>";
+		};
+		8394D7DE1F7DD4030078A45B /* RxBus-Demo-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				8394D7DF1F7DD4030078A45B /* AppDelegate.swift */,
+				8394D7E11F7DD4030078A45B /* ViewController.swift */,
+				8394D7E31F7DD4030078A45B /* Assets.xcassets */,
+				8394D7E51F7DD4030078A45B /* Main.storyboard */,
+				8394D7E81F7DD4030078A45B /* Info.plist */,
+			);
+			path = "RxBus-Demo-macOS";
+			sourceTree = "<group>";
+		};
+		8394D81B1F7DED2E0078A45B /* RxBus-Demo-tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				8394D81C1F7DED2E0078A45B /* AppDelegate.swift */,
+				8394D81E1F7DED2E0078A45B /* ViewController.swift */,
+				8394D8201F7DED2E0078A45B /* Main.storyboard */,
+				8394D8231F7DED2E0078A45B /* Assets.xcassets */,
+				8394D8251F7DED2E0078A45B /* Info.plist */,
+			);
+			path = "RxBus-Demo-tvOS";
 			sourceTree = "<group>";
 		};
 		DBC6BC38BED26F5D0FC51548 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				18DF5E2E7DC65BCDB29C9DAA /* Pods-RxBus-Demo.debug.xcconfig */,
-				CDEEA42A5DCC456C6DA1C80E /* Pods-RxBus-Demo.release.xcconfig */,
+				4476F11D6A3BB5B85E5BB0CC /* Pods-RxBus-Demo-iOS.debug.xcconfig */,
+				B90F5193380B70AC5F4F1B69 /* Pods-RxBus-Demo-iOS.release.xcconfig */,
+				521AF436FC73D199A4B70CD7 /* Pods-RxBus-Demo-macOS.debug.xcconfig */,
+				B220B4C357B786AFF5E9E243 /* Pods-RxBus-Demo-macOS.release.xcconfig */,
+				1DCCCE0270D015DD0663A503 /* Pods-RxBus-Demo-tvOS.debug.xcconfig */,
+				8E098F5CA3DFA5F03B1A0471 /* Pods-RxBus-Demo-tvOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -91,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8394D7C01F7CF3140078A45B /* RxBus-Demo */ = {
+		8394D7C01F7CF3140078A45B /* RxBus-Demo-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8394D7D31F7CF3140078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo" */;
+			buildConfigurationList = 8394D7D31F7CF3140078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo-iOS" */;
 			buildPhases = (
 				E06EFC777E48B45D86456579 /* [CP] Check Pods Manifest.lock */,
 				8394D7D81F7D00440078A45B /* SwiftLint Script */,
@@ -107,9 +187,49 @@
 			);
 			dependencies = (
 			);
-			name = "RxBus-Demo";
-			productName = "RxBus-Demo";
-			productReference = 8394D7C11F7CF3140078A45B /* RxBus-Demo.app */;
+			name = "RxBus-Demo-iOS";
+			productName = "RxBus-Demo-iOS";
+			productReference = 8394D7C11F7CF3140078A45B /* RxBus-Demo-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8394D7DC1F7DD4030078A45B /* RxBus-Demo-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8394D7EB1F7DD4030078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo-macOS" */;
+			buildPhases = (
+				20F5846D8B80B126A8B53995 /* [CP] Check Pods Manifest.lock */,
+				8394D7D91F7DD4030078A45B /* Sources */,
+				8394D7DA1F7DD4030078A45B /* Frameworks */,
+				8394D7DB1F7DD4030078A45B /* Resources */,
+				96AC23007B18748BEA673448 /* [CP] Embed Pods Frameworks */,
+				CD3BF3C0AEDAC338D9D97E28 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxBus-Demo-macOS";
+			productName = "RxBus-Demo-macOS";
+			productReference = 8394D7DD1F7DD4030078A45B /* RxBus-Demo-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8394D8191F7DED2E0078A45B /* RxBus-Demo-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8394D8281F7DED2E0078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo-tvOS" */;
+			buildPhases = (
+				48D26CB6B85358A078FAE1B7 /* [CP] Check Pods Manifest.lock */,
+				8394D8161F7DED2E0078A45B /* Sources */,
+				8394D8171F7DED2E0078A45B /* Frameworks */,
+				8394D8181F7DED2E0078A45B /* Resources */,
+				3FD2779024CA6DA0B93AD904 /* [CP] Embed Pods Frameworks */,
+				63182B40E5363B7564DC08A6 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxBus-Demo-tvOS";
+			productName = "RxBus-Demo-tvOS";
+			productReference = 8394D81A1F7DED2E0078A45B /* RxBus-Demo-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -123,6 +243,14 @@
 				ORGANIZATIONNAME = "Davin Ahn";
 				TargetAttributes = {
 					8394D7C01F7CF3140078A45B = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					8394D7DC1F7DD4030078A45B = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					8394D8191F7DED2E0078A45B = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -141,7 +269,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8394D7C01F7CF3140078A45B /* RxBus-Demo */,
+				8394D7C01F7CF3140078A45B /* RxBus-Demo-iOS */,
+				8394D7DC1F7DD4030078A45B /* RxBus-Demo-macOS */,
+				8394D8191F7DED2E0078A45B /* RxBus-Demo-tvOS */,
 			);
 		};
 /* End PBXProject section */
@@ -157,6 +287,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8394D7DB1F7DD4030078A45B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8394D7E41F7DD4030078A45B /* Assets.xcassets in Resources */,
+				8394D7E71F7DD4030078A45B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8394D8181F7DED2E0078A45B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8394D8241F7DED2E0078A45B /* Assets.xcassets in Resources */,
+				8394D8221F7DED2E0078A45B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -166,9 +314,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo/Pods-RxBus-Demo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxBus/RxBus.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxBus-iOS/RxBus.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -177,7 +325,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo/Pods-RxBus-Demo-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20F5846D8B80B126A8B53995 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxBus-Demo-macOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FD2779024CA6DA0B93AD904 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxBus-tvOS/RxBus.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-tvOS/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48D26CB6B85358A078FAE1B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxBus-Demo-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63182B40E5363B7564DC08A6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		688429081BB977248C037C5D /* [CP] Copy Pods Resources */ = {
@@ -192,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo/Pods-RxBus-Demo-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8394D7D81F7D00440078A45B /* SwiftLint Script */ = {
@@ -209,6 +428,41 @@
 			shellPath = /bin/sh;
 			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\\n\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\n    current=$(swiftlint version)\n    require=\"0.20.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi";
 		};
+		96AC23007B18748BEA673448 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxBus-macOS/RxBus.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD3BF3C0AEDAC338D9D97E28 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E06EFC777E48B45D86456579 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,7 +474,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxBus-Demo-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxBus-Demo-iOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -236,6 +490,24 @@
 			files = (
 				8394D7C71F7CF3140078A45B /* ViewController.swift in Sources */,
 				8394D7C51F7CF3140078A45B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8394D7D91F7DD4030078A45B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8394D7E21F7DD4030078A45B /* ViewController.swift in Sources */,
+				8394D7E01F7DD4030078A45B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8394D8161F7DED2E0078A45B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8394D81F1F7DED2E0078A45B /* ViewController.swift in Sources */,
+				8394D81D1F7DED2E0078A45B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +528,22 @@
 				8394D7CE1F7CF3140078A45B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8394D7E51F7DD4030078A45B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8394D7E61F7DD4030078A45B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8394D8201F7DED2E0078A45B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8394D8211F7DED2E0078A45B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -302,7 +590,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -346,7 +635,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -356,14 +646,14 @@
 		};
 		8394D7D41F7CF3140078A45B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18DF5E2E7DC65BCDB29C9DAA /* Pods-RxBus-Demo.debug.xcconfig */;
+			baseConfigurationReference = 4476F11D6A3BB5B85E5BB0CC /* Pods-RxBus-Demo-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "RxBus-Demo/Info.plist";
+				INFOPLIST_FILE = "RxBus-Demo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -372,17 +662,85 @@
 		};
 		8394D7D51F7CF3140078A45B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDEEA42A5DCC456C6DA1C80E /* Pods-RxBus-Demo.release.xcconfig */;
+			baseConfigurationReference = B90F5193380B70AC5F4F1B69 /* Pods-RxBus-Demo-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "RxBus-Demo/Info.plist";
+				INFOPLIST_FILE = "RxBus-Demo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8394D7E91F7DD4030078A45B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 521AF436FC73D199A4B70CD7 /* Pods-RxBus-Demo-macOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "RxBus-Demo-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		8394D7EA1F7DD4030078A45B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B220B4C357B786AFF5E9E243 /* Pods-RxBus-Demo-macOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "RxBus-Demo-macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		8394D8261F7DED2E0078A45B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DCCCE0270D015DD0663A503 /* Pods-RxBus-Demo-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "RxBus-Demo-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+			};
+			name = Debug;
+		};
+		8394D8271F7DED2E0078A45B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E098F5CA3DFA5F03B1A0471 /* Pods-RxBus-Demo-tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "RxBus-Demo-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -398,7 +756,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8394D7D31F7CF3140078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo" */ = {
+		8394D7D31F7CF3140078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8394D7D41F7CF3140078A45B /* Debug */,
@@ -406,6 +764,23 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8394D7EB1F7DD4030078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8394D7E91F7DD4030078A45B /* Debug */,
+				8394D7EA1F7DD4030078A45B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8394D8281F7DED2E0078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8394D8261F7DED2E0078A45B /* Debug */,
+				8394D8271F7DED2E0078A45B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
