@@ -141,7 +141,7 @@ public final class RxBus {
         })
     }
     
-    public func post(notificationName name: Notification.Name, userInfo: [AnyHashable : Any]? = nil, sticky: Bool = false) {
+    public func post(notificationName name: Notification.Name, userInfo: [AnyHashable: Any]? = nil, sticky: Bool = false) {
         let notification = Notification(name: name, object: nil, userInfo: userInfo)
         post(notification: notification, sticky: sticky)
     }
