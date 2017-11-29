@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  RxBus-Demo-tvOS
-//
-//  Created by Da Vin Ahn on 2017. 9. 29..
-//  Copyright © 2017년 Davin Ahn. All rights reserved.
-//
-
 import UIKit
 import RxBus
 import RxSwift
