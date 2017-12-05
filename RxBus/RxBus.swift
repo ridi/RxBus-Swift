@@ -10,7 +10,7 @@ public extension BusEvent {
     }
 }
 
-public final class RxBus {
+public final class RxBus: CustomStringConvertible {
     public static let shared = RxBus()
     
     private init() { }
@@ -25,6 +25,31 @@ public final class RxBus {
     private var subscriptionCounts = [EventName: [EventPriority: Int]]()
     
     private var onDisposes = [String: () -> Void]()
+    
+    public var description: String {
+        var string = "Subscription List:\n"
+        for (key, subjects) in subjects {
+            string += "\t\(key)\n"
+            subjects.sorted(by: { subject1, subject2 -> Bool in
+                return subject1.key > subject2.key
+            }).forEach {
+                let count = subscriptionCounts[key]?[$0.key] ?? 0
+                string += "\t\tPriority: \($0.key), Subject: \($0.value), Count: \(count)\n"
+            }
+        }
+        if subjects.isEmpty {
+            string += "\tEmpty\n"
+        }
+        string += "Sticky List:\n"
+        for (key, subject) in stickyMap {
+            string += "\t\(key)\n"
+            string += "\t\tSubject: \(subject)\n"
+        }
+        if stickyMap.isEmpty {
+            string += "\tEmpty\n"
+        }
+        return "\(string)"
+    }
     
     // MARK: -
     
