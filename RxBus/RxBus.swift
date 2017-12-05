@@ -74,8 +74,10 @@ public final class RxBus: CustomStringConvertible {
             if subjects[name]?.isEmpty ?? false {
                 subjects.removeValue(forKey: name)
                 let disposeKey = makeNSObserverDisposeKey(name: name, priority: priority)
-                onDisposes[disposeKey]!()
-                onDisposes.removeValue(forKey: disposeKey)
+                if let onDispose = onDisposes[disposeKey] {
+                    onDispose()
+                    onDisposes.removeValue(forKey: disposeKey)
+                }
             }
             if subscriptionCounts[name]?.isEmpty ?? false {
                 subscriptionCounts.removeValue(forKey: name)
