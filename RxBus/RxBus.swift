@@ -73,7 +73,9 @@ public final class RxBus: CustomStringConvertible {
             subscriptionCounts[name]?.removeValue(forKey: priority)
             if subjects[name]?.isEmpty ?? false {
                 subjects.removeValue(forKey: name)
-                onDisposes.removeValue(forKey: makeNSObserverDisposeKey(name: name, priority: priority))
+                let disposeKey = makeNSObserverDisposeKey(name: name, priority: priority)
+                onDisposes[disposeKey]!()
+                onDisposes.removeValue(forKey: disposeKey)
             }
             if subscriptionCounts[name]?.isEmpty ?? false {
                 subscriptionCounts.removeValue(forKey: name)
@@ -149,11 +151,9 @@ public final class RxBus: CustomStringConvertible {
         } else if subjects[name.rawValue]![priority] == nil {
             subjects[name.rawValue]![priority] = makeNotificationObserable(name: name, priority: priority)
         }
-        let onDispose = onDisposes[makeNSObserverDisposeKey(name: name.rawValue, priority: priority)]
         let observable = (subjects[name.rawValue]![priority] as! Observable<Notification>).do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
             self.increaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
         }, onSubscribed: nil, onDispose: {
-            onDispose?()
             self.decreaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
         })
         if sticky,
