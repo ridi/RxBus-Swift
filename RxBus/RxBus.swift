@@ -89,7 +89,11 @@ public final class RxBus: CustomStringConvertible {
         } else if subjects[event.name]![priority] == nil {
             subjects[event.name]![priority] = PublishSubject<T>()
         }
-        let observable = subjects[event.name]![priority] as! PublishSubject<T>
+        let observable = (subjects[event.name]![priority] as! PublishSubject<T>).do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
+            self.increaseSubscriptionCount(onEventName: event.name, priority: priority)
+        }, onSubscribed: nil, onDispose: {
+            self.decreaseSubscriptionCount(onEventName: event.name, priority: priority)
+        })
         if sticky,
             let lastEvent = removeSticky(event: event) {
                 return Observable.of(observable, Observable.create({ subscriber -> Disposable in
@@ -97,11 +101,7 @@ public final class RxBus: CustomStringConvertible {
                     return Disposables.create()
                 })).merge()
         }
-        return observable.do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
-            self.increaseSubscriptionCount(onEventName: event.name, priority: priority)
-        }, onSubscribed: nil, onDispose: {
-            self.decreaseSubscriptionCount(onEventName: event.name, priority: priority)
-        })
+        return observable
     }
     
     public func post<T: BusEvent>(event: T, sticky: Bool = false) {
@@ -149,7 +149,13 @@ public final class RxBus: CustomStringConvertible {
         } else if subjects[name.rawValue]![priority] == nil {
             subjects[name.rawValue]![priority] = makeNotificationObserable(name: name, priority: priority)
         }
-        let observable = subjects[name.rawValue]![priority] as! Observable<Notification>
+        let onDispose = onDisposes[makeNSObserverDisposeKey(name: name.rawValue, priority: priority)]
+        let observable = (subjects[name.rawValue]![priority] as! Observable<Notification>).do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
+            self.increaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
+        }, onSubscribed: nil, onDispose: {
+            onDispose?()
+            self.decreaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
+        })
         if sticky,
             let lastNotification = removeStickyNotification(name: name) {
                 return Observable.of(observable, Observable.create({ subscriber -> Disposable in
@@ -157,13 +163,7 @@ public final class RxBus: CustomStringConvertible {
                     return Disposables.create()
                 })).merge()
         }
-        let onDispose = onDisposes[makeNSObserverDisposeKey(name: name.rawValue, priority: priority)]
-        return observable.do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
-            self.increaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
-        }, onSubscribed: nil, onDispose: {
-            onDispose?()
-            self.decreaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
-        })
+        return observable
     }
     
     public func post(notificationName name: Notification.Name, userInfo: [AnyHashable: Any]? = nil, sticky: Bool = false) {
