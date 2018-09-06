@@ -135,7 +135,7 @@ public final class RxBus: CustomStringConvertible {
         return "\(name)_\(priority)"
     }
     
-    private func makeNotificationObserable(name: Notification.Name, priority: Int) -> Observable<Notification> {
+    private func makeNotificationObservable(name: Notification.Name, priority: Int) -> Observable<Notification> {
         let observable = PublishSubject<Notification>()
         let base = NotificationCenter.default.rx.base
         let nsObserver = base.addObserver(forName: name, object: nil, queue: nil) { notification in
@@ -149,9 +149,9 @@ public final class RxBus: CustomStringConvertible {
     
     public func asObservable(notificationName name: Notification.Name, sticky: Bool = false, priority: Int = 0) -> Observable<Notification> {
         if subjects[name.rawValue] == nil {
-            subjects[name.rawValue] = [priority: makeNotificationObserable(name: name, priority: priority)]
+            subjects[name.rawValue] = [priority: makeNotificationObservable(name: name, priority: priority)]
         } else if subjects[name.rawValue]![priority] == nil {
-            subjects[name.rawValue]![priority] = makeNotificationObserable(name: name, priority: priority)
+            subjects[name.rawValue]![priority] = makeNotificationObservable(name: name, priority: priority)
         }
         let observable = (subjects[name.rawValue]![priority] as! Observable<Notification>).do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
             self.increaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
