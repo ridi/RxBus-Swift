@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/ridi/RxBus-Swift'
   s.authors      = { 'Ridibooks Viewer Team' => 'viewer.team@ridi.com' }
   s.license      = 'MIT'
+  s.swift_version = '4.2'
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '2.0'
