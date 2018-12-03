@@ -58,9 +58,9 @@ class ViewController: NSViewController {
         // System Notification subscription
         
         bus.asObservable(notificationName: .NSComboBoxWillPopUp).subscribe { event in
-            print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo)")
+            print("\(event.element!.name.rawValue), userInfo: \(String(describing: event.element!.userInfo))")
         }.addDisposableTo(disposeBag)
-        _ = comboBox.cell?.perform(Selector("popUp:"))
+        _ = comboBox.cell?.perform(Selector(("popUp:")))
         
         // Custom Notification subscription/posting
         

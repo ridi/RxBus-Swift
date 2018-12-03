@@ -93,11 +93,18 @@ public final class RxBus: CustomStringConvertible {
         } else if subjects[event.name]![priority] == nil {
             subjects[event.name]![priority] = PublishSubject<T>()
         }
-        let observable = (subjects[event.name]![priority] as! PublishSubject<T>).do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
-            self.increaseSubscriptionCount(onEventName: event.name, priority: priority)
-        }, onSubscribed: nil, onDispose: {
-            self.decreaseSubscriptionCount(onEventName: event.name, priority: priority)
-        })
+        let observable = (subjects[event.name]![priority] as! PublishSubject<T>).do(
+            onNext: nil,
+            onError: nil,
+            onCompleted: nil,
+            onSubscribe: {
+                self.increaseSubscriptionCount(onEventName: event.name, priority: priority)
+            },
+            onSubscribed: nil,
+            onDispose: {
+                self.decreaseSubscriptionCount(onEventName: event.name, priority: priority)
+            }
+        )
         if sticky,
             let lastEvent = removeSticky(event: event) {
                 return Observable.of(observable, Observable.create({ subscriber -> Disposable in
@@ -147,17 +154,28 @@ public final class RxBus: CustomStringConvertible {
         return observable
     }
     
-    public func asObservable(notificationName name: Notification.Name, sticky: Bool = false, priority: Int = 0) -> Observable<Notification> {
+    public func asObservable(
+        notificationName name: Notification.Name,
+        sticky: Bool = false,
+        priority: Int = 0
+    ) -> Observable<Notification> {
         if subjects[name.rawValue] == nil {
             subjects[name.rawValue] = [priority: makeNotificationObservable(name: name, priority: priority)]
         } else if subjects[name.rawValue]![priority] == nil {
             subjects[name.rawValue]![priority] = makeNotificationObservable(name: name, priority: priority)
         }
-        let observable = (subjects[name.rawValue]![priority] as! Observable<Notification>).do(onNext: nil, onError: nil, onCompleted: nil, onSubscribe: {
+        let observable = (subjects[name.rawValue]![priority] as! Observable<Notification>).do(
+            onNext: nil,
+            onError: nil,
+            onCompleted: nil,
+            onSubscribe: {
             self.increaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
-        }, onSubscribed: nil, onDispose: {
-            self.decreaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
-        })
+            },
+            onSubscribed: nil,
+            onDispose: {
+                self.decreaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
+            }
+        )
         if sticky,
             let lastNotification = removeStickyNotification(name: name) {
                 return Observable.of(observable, Observable.create({ subscriber -> Disposable in
@@ -168,7 +186,11 @@ public final class RxBus: CustomStringConvertible {
         return observable
     }
     
-    public func post(notificationName name: Notification.Name, userInfo: [AnyHashable: Any]? = nil, sticky: Bool = false) {
+    public func post(
+        notificationName name: Notification.Name,
+        userInfo: [AnyHashable: Any]? = nil,
+        sticky: Bool = false
+    ) {
         let notification = Notification(name: name, object: nil, userInfo: userInfo)
         post(notification: notification, sticky: sticky)
     }

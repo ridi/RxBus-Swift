@@ -1,6 +1,6 @@
-import UIKit
 import RxBus
 import RxSwift
+import UIKit
 
 // Defining Events struct
 struct Events {
