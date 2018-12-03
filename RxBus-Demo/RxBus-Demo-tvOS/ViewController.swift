@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         bus.asObservable(event: Events.LoggedIn.self).subscribe { event in
             print("LoggedIn, userId = \(event.element!.userId)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
         
         // Sticky events
@@ -39,33 +39,33 @@ class ViewController: UIViewController {
         bus.post(event: Events.LoggedOut(), sticky: true)
         bus.asObservable(event: Events.LoggedOut.self, sticky: true).subscribe { _ in
             print("LoggedOut")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         
         // Subscription priority
         
         bus.asObservable(event: Events.Purchased.self, sticky: false, priority: -1).subscribe { event in
             print("Purchased(priority: -1), tid = \(event.element!.tid)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.asObservable(event: Events.Purchased.self, sticky: false, priority: 1).subscribe { event in
             print("Purchased(priority: 1), tid = \(event.element!.tid)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.asObservable(event: Events.Purchased.self).subscribe { event in
             print("Purchased(priority: 0 = default), tid = \(event.element!.tid)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.post(event: Events.Purchased(tid: 1001))
         
         // System Notification subscription
         
-        bus.asObservable(notificationName: .UIScreenDidConnect).subscribe { event in
+        bus.asObservable(notificationName: UIScreen.didConnectNotification).subscribe { event in
             print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo!)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         
         // Custom Notification subscription/posting
         
         bus.post(notificationName: .ViewControllerDidLoad, userInfo: ["message": "Hi~"], sticky: true)
         bus.asObservable(notificationName: .ViewControllerDidLoad, sticky: true).subscribe { event in
             print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo!)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         
     }
 }

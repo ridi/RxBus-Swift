@@ -32,7 +32,7 @@ class ViewController: NSViewController {
         
         bus.asObservable(event: Events.LoggedIn.self).subscribe { event in
             print("LoggedIn, userId = \(event.element!.userId)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
         
         // Sticky events
@@ -40,26 +40,26 @@ class ViewController: NSViewController {
         bus.post(event: Events.LoggedOut(), sticky: true)
         bus.asObservable(event: Events.LoggedOut.self, sticky: true).subscribe { _ in
             print("LoggedOut")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         
         // Subscription priority
         
         bus.asObservable(event: Events.Purchased.self, sticky: false, priority: -1).subscribe { event in
             print("Purchased(priority: -1), tid = \(event.element!.tid)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.asObservable(event: Events.Purchased.self, sticky: false, priority: 1).subscribe { event in
             print("Purchased(priority: 1), tid = \(event.element!.tid)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.asObservable(event: Events.Purchased.self).subscribe { event in
             print("Purchased(priority: 0 = default), tid = \(event.element!.tid)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         bus.post(event: Events.Purchased(tid: 1001))
         
         // System Notification subscription
         
-        bus.asObservable(notificationName: .NSComboBoxWillPopUp).subscribe { event in
+        bus.asObservable(notificationName: NSComboBox.willPopUpNotification).subscribe { event in
             print("\(event.element!.name.rawValue), userInfo: \(String(describing: event.element!.userInfo))")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         _ = comboBox.cell?.perform(Selector(("popUp:")))
         
         // Custom Notification subscription/posting
@@ -67,7 +67,7 @@ class ViewController: NSViewController {
         bus.post(notificationName: .ViewControllerDidLoad, userInfo: ["message": "Hi~"], sticky: true)
         bus.asObservable(notificationName: .ViewControllerDidLoad, sticky: true).subscribe { event in
             print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo!)")
-        }.addDisposableTo(disposeBag)
+        }.disposed(by: disposeBag)
         
     }
 }

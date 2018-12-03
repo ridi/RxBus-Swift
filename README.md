@@ -6,10 +6,9 @@ Event bus framework supports sticky events and subscribers priority based on RxS
 [![License](https://img.shields.io/cocoapods/l/RxBus.svg?style=flat)](https://cocoadocs.org/docsets/RxBus)
 
 ## Requirements
-- Xcode 8.0+
-- Swift 3
+- Xcode 10.0+
+- Swift 4+
 - iOS8+
-- watchOS 2.0+
 - macOS 10.10+
 - tvOS 9.0+
 
@@ -69,7 +68,7 @@ struct Events {
 ```swift
 RxBus.shared.asObservable(event: Events.LoggedIn.self).subscribe { event in
     print("LoggedIn, userId = \(event.element!.userId)")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 RxBus.shared.post(event: Events.LoggedIn(userId: "davin.ahn"))
 ```
 
@@ -83,7 +82,7 @@ LoggedIn, userId = davin.ahn
 RxBus.shared.post(event: Events.LoggedOut(), sticky: true)
 RxBus.shared.asObservable(event: Events.LoggedOut.self, sticky: true).subscribe { _ in
     print("LoggedOut")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 ```
 
 ```
@@ -95,13 +94,13 @@ LoggedOut
 ```swift
 RxBus.shared.asObservable(event: Events.Purchased.self, sticky: false, priority: -1).subscribe { event in
     print("Purchased(priority: -1), tid = \(event.element!.tid)")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 RxBus.shared.asObservable(event: Events.Purchased.self, sticky: false, priority: 1).subscribe { event in
     print("Purchased(priority: 1), tid = \(event.element!.tid)")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 RxBus.shared.asObservable(event: Events.Purchased.self).subscribe { event in
     print("Purchased(priority: 0 = default), tid = \(event.element!.tid)")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 RxBus.shared.post(event: Events.Purchased(tid: 1001))
 ```
 
@@ -114,14 +113,14 @@ Purchased(priority: -1), tid = 1001
 #### System Notification subscription
 
 ```swift
-RxBus.shared.asObservable(notificationName: .UIKeyboardWillShow).subscribe { event in
+RxBus.shared.asObservable(notificationName: UIResponder.keyboardWillShowNotification).subscribe { event in
     print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo)")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 textField.becomeFirstResponder()
 ```
 
 ```
-UIKeyboardWillShowNotification, userInfo: [AnyHashable("UIKeyboardCenterBeginUserInfoKey"): NSPoint: {160, 694.5}, AnyHashable("UIKeyboardIsLocalUserInfoKey"): 1, AnyHashable("UIKeyboardCenterEndUserInfoKey"): NSPoint: {160, 441.5}, AnyHashable("UIKeyboardBoundsUserInfoKey"): NSRect: {{0, 0}, {320, 253}}, AnyHashable("UIKeyboardFrameEndUserInfoKey"): NSRect: {{0, 315}, {320, 253}}, AnyHashable("UIKeyboardAnimationCurveUserInfoKey"): 7, AnyHashable("UIKeyboardFrameBeginUserInfoKey"): NSRect: {{0, 568}, {320, 253}}, AnyHashable("UIKeyboardAnimationDurationUserInfoKey"): 0.25]
+UIKeyboardWillShowNotification, userInfo: [AnyHashable("UIKeyboardAnimationCurveUserInfoKey"): 7, AnyHashable("UIKeyboardCenterEndUserInfoKey"): NSPoint: {207, 745.5}, AnyHashable("UIKeyboardFrameBeginUserInfoKey"): NSRect: {{0, 896}, {414, 54}}, AnyHashable("UIKeyboardFrameEndUserInfoKey"): NSRect: {{0, 595}, {414, 301}}, AnyHashable("UIKeyboardBoundsUserInfoKey"): NSRect: {{0, 0}, {414, 301}}, AnyHashable("UIKeyboardIsLocalUserInfoKey"): 1, AnyHashable("UIKeyboardAnimationDurationUserInfoKey"): 0.25, AnyHashable("UIKeyboardCenterBeginUserInfoKey"): NSPoint: {207, 923}]
 ```
 
 #### Defining Custom Notification
@@ -137,7 +136,7 @@ extension Notification.Name {
 ```swift
 RxBus.shared.asObservable(notificationName: .Custom).subscribe { event in
     print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo)")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 RxBus.shared.post(notificationName: .Custom, userInfo: ["message": "Hi~"])
 ```
 
@@ -151,7 +150,7 @@ Custom, userInfo: [AnyHashable("message"): "Hi~"]
 RxBus.shared.post(notificationName: .Custom, userInfo: ["value": 5], sticky: true)
 RxBus.shared.asObservable(notificationName: .Custom, sticky: true).subscribe { event in
     print("\(event.element!.name.rawValue), userInfo: \(event.element!.userInfo)")
-}.addDisposableTo(disposeBag)
+}.disposed(by: disposeBag)
 ```
 
 ```

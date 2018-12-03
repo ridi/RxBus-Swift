@@ -12,5 +12,5 @@ Pod::Spec.new do |s|
   s.source       = { :git => 'https://github.com/ridi/RxBus-Swift.git', :tag => s.version }
   s.source_files = 'RxBus/RxBus.swift'
   s.frameworks   = 'Foundation'
-  s.dependency 'RxSwift', '~> 3.0'
+  s.dependency 'RxSwift', '~> 4.0'
 end
