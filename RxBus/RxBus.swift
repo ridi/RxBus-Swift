@@ -10,6 +10,55 @@ public extension BusEvent {
     }
 }
 
+private let accessQueue = DispatchQueue(label: "com.ridi.rxbus.accessQueue", attributes: .concurrent)
+
+private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
+    private var values = [Key: Value]()
+    
+    subscript(key: Key) -> Value? {
+        get {
+            var value: Value?
+            accessQueue.sync {
+                value = self.values[key]
+            }
+            return value
+        }
+        set {
+            accessQueue.async(flags: .barrier) {
+                self.values[key] = newValue
+            }
+        }
+    }
+    
+    var isEmpty: Bool {
+        var isEmpty = false
+        accessQueue.sync {
+            isEmpty = values.isEmpty
+        }
+        return isEmpty
+    }
+    
+    func removeValue(forKey key: Key) -> Value? {
+        let value = values[key]
+        accessQueue.async(flags: .barrier) {
+            self.values.removeValue(forKey: key)
+        }
+        return value
+    }
+    
+    func forEach(_ body: ((key: Key, value: Value)) -> Void) {
+        accessQueue.sync {
+            values.forEach(body)
+        }
+    }
+    
+    typealias Iterator = DictionaryIterator<Key, Value>
+    
+    func makeIterator() -> Dictionary<Key, Value>.Iterator {
+        return values.makeIterator()
+    }
+}
+
 public final class RxBus: CustomStringConvertible {
     public static let shared = RxBus()
     
@@ -20,11 +69,11 @@ public final class RxBus: CustomStringConvertible {
     private typealias EventName = String
     private typealias EventPriority = Int
     
-    private var subjects = [EventName: [EventPriority: Any]]()
-    private var stickyMap = [EventName: Any]()
-    private var subscriptionCounts = [EventName: [EventPriority: Int]]()
+    private var subjects = SynchronizedValues<EventName, [EventPriority: Any]>()
+    private var stickyMap = SynchronizedValues<EventName, Any>()
+    private var subscriptionCounts = SynchronizedValues<EventName, [EventPriority: Int]>()
     
-    private var nsObservers = [String: Any]()
+    private var nsObservers = SynchronizedValues<String, Any>()
     
     public var description: String {
         var string = "Subscription List:\n"
@@ -72,14 +121,14 @@ public final class RxBus: CustomStringConvertible {
             subjects[name]?.removeValue(forKey: priority)
             subscriptionCounts[name]?.removeValue(forKey: priority)
             if subjects[name]?.isEmpty ?? false {
-                subjects.removeValue(forKey: name)
+                _ = subjects.removeValue(forKey: name)
                 if let nsObserver = nsObservers[name] {
                     NotificationCenter.default.removeObserver(nsObserver)
-                    nsObservers.removeValue(forKey: name)
+                    _ = nsObservers.removeValue(forKey: name)
                 }
             }
             if subscriptionCounts[name]?.isEmpty ?? false {
-                subscriptionCounts.removeValue(forKey: name)
+                _ = subscriptionCounts.removeValue(forKey: name)
             }
         }
     }
