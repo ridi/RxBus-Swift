@@ -260,6 +260,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -313,20 +314,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-iOS/RxAtomic.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxBus-iOS/RxBus.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		20F5846D8B80B126A8B53995 /* [CP] Check Pods Manifest.lock */ = {
@@ -389,20 +388,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-tvOS/RxAtomic.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxBus-tvOS/RxBus.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-tvOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		48D26CB6B85358A078FAE1B7 /* [CP] Check Pods Manifest.lock */ = {
@@ -443,20 +440,18 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic-macOS/RxAtomic.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxBus-macOS/RxBus.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E06EFC777E48B45D86456579 /* [CP] Check Pods Manifest.lock */ = {
@@ -665,7 +660,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "RxBus-Demo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -681,7 +676,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "RxBus-Demo-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -698,7 +693,7 @@
 				INFOPLIST_FILE = "RxBus-Demo-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
@@ -715,7 +710,7 @@
 				INFOPLIST_FILE = "RxBus-Demo-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
@@ -730,7 +725,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "RxBus-Demo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.2;
@@ -747,7 +742,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "RxBus-Demo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.davin.RxBus-Demo-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.2;
