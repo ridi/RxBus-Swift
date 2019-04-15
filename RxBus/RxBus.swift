@@ -24,7 +24,7 @@ public final class RxBus: CustomStringConvertible {
     private var stickyMap = [EventName: Any]()
     private var subscriptionCounts = [EventName: [EventPriority: Int]]()
     
-    private var onDisposes = [String: () -> Void]()
+    private var nsObservers = [String: Any]()
     
     public var description: String {
         var string = "Subscription List:\n"
@@ -73,10 +73,9 @@ public final class RxBus: CustomStringConvertible {
             subscriptionCounts[name]?.removeValue(forKey: priority)
             if subjects[name]?.isEmpty ?? false {
                 subjects.removeValue(forKey: name)
-                let disposeKey = makeNSObserverDisposeKey(name: name, priority: priority)
-                if let onDispose = onDisposes[disposeKey] {
-                    onDispose()
-                    onDisposes.removeValue(forKey: disposeKey)
+                if let nsObserver = nsObservers[name] {
+                    NotificationCenter.default.removeObserver(nsObserver)
+                    nsObservers.removeValue(forKey: name)
                 }
             }
             if subscriptionCounts[name]?.isEmpty ?? false {
@@ -138,18 +137,24 @@ public final class RxBus: CustomStringConvertible {
     
     // MARK: -
     
-    private func makeNSObserverDisposeKey(name: String, priority: Int) -> String {
-        return "\(name)_\(priority)"
+    private func dispatchNotification(_ notification: Notification) {
+        let key = notification.name.rawValue
+        if let subjects = subjects[key] {
+            subjects.keys.sorted(by: { $0 > $1 })
+                .forEach { priority in
+                    (subjects[priority] as? PublishSubject<Notification>)?.onNext(notification)
+                }
+        }
     }
     
-    private func makeNotificationObservable(name: Notification.Name, priority: Int) -> Observable<Notification> {
+    private func makeNotificationObservable(name: Notification.Name) -> Observable<Notification> {
         let observable = PublishSubject<Notification>()
-        let base = NotificationCenter.default.rx.base
-        let nsObserver = base.addObserver(forName: name, object: nil, queue: nil) { notification in
-            observable.asObserver().onNext(notification)
-        }
-        onDisposes[makeNSObserverDisposeKey(name: name.rawValue, priority: priority)] = {
-            base.removeObserver(nsObserver)
+        let nsObserver = nsObservers[name.rawValue]
+        if nsObserver == nil {
+            let base = NotificationCenter.default.rx.base
+            nsObservers[name.rawValue] = base.addObserver(forName: name, object: nil, queue: nil) { notification in
+                self.dispatchNotification(notification)
+            }
         }
         return observable
     }
@@ -160,16 +165,16 @@ public final class RxBus: CustomStringConvertible {
         priority: Int = 0
     ) -> Observable<Notification> {
         if subjects[name.rawValue] == nil {
-            subjects[name.rawValue] = [priority: makeNotificationObservable(name: name, priority: priority)]
+            subjects[name.rawValue] = [priority: makeNotificationObservable(name: name)]
         } else if subjects[name.rawValue]![priority] == nil {
-            subjects[name.rawValue]![priority] = makeNotificationObservable(name: name, priority: priority)
+            subjects[name.rawValue]![priority] = makeNotificationObservable(name: name)
         }
         let observable = (subjects[name.rawValue]![priority] as! Observable<Notification>).do(
             onNext: nil,
             onError: nil,
             onCompleted: nil,
             onSubscribe: {
-            self.increaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
+                self.increaseSubscriptionCount(onEventName: name.rawValue, priority: priority)
             },
             onSubscribed: nil,
             onDispose: {
@@ -200,12 +205,7 @@ public final class RxBus: CustomStringConvertible {
         if sticky {
             stickyMap[name] = notification
         }
-        if let subjects = subjects[name] {
-            subjects.keys.sorted(by: { $0 > $1 })
-                .forEach { _ in
-                    NotificationCenter.default.post(notification)
-                }
-        }
+        NotificationCenter.default.post(notification)
     }
     
     public func stickyNotification(name: Notification.Name) -> Notification? {
