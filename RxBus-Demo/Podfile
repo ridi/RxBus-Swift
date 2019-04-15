@@ -5,6 +5,11 @@ target 'RxBus-Demo-iOS' do
     pod 'RxBus', :path => '../'
 end
 
+target 'RxBus-Demo-iOS-Tests' do
+  platform :ios, '8.0'
+  pod 'RxBus', :path => '../'
+end
+
 target 'RxBus-Demo-macOS' do
     platform :osx, '10.10'
     pod 'RxBus', :path => '../'

@@ -75,6 +75,14 @@ public final class RxBus: CustomStringConvertible {
     
     private var nsObservers = SynchronizedValues<String, Any>()
     
+    public var count: Int {
+        var count = 0
+        subscriptionCounts.forEach({ _, value in
+            count += value.values.reduce(0, +)
+        })
+        return count
+    }
+    
     public var description: String {
         var string = "Subscription List:\n"
         for (key, subjects) in subjects {
