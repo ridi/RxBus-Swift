@@ -26,6 +26,7 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
     
     override func tearDown() {
         disposeBag = nil
+        bus.removeAllStickys()
         XCTAssertEqual(bus.count, 0)
     }
     

@@ -68,6 +68,12 @@ private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
         return value
     }
     
+    func removeAll() {
+        accessQueue.async(flags: .barrier) {
+            self._values.removeAll()
+        }
+    }
+    
     typealias Iterator = DictionaryIterator<Key, Value>
     
     func makeIterator() -> Dictionary<Key, Value>.Iterator {
@@ -172,6 +178,10 @@ public final class RxBus: CustomStringConvertible {
     }
     
     // MARK: -
+    
+    public func removeAllStickys() {
+        stickyMap.removeAll()
+    }
     
     public func asObservable<T: BusEvent>(event: T.Type, priority: Int) -> Observable<T> {
         return asObservable(event: event, sticky: false, priority: priority)
