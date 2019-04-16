@@ -60,11 +60,11 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         
         let expect = [1, 0, -1]
         var actual = [Int]()
-        bus.asObservable(event: Events.Purchased.self, sticky: false, priority: -1).subscribe { event in
+        bus.asObservable(event: Events.Purchased.self, priority: -1).subscribe { event in
             actual.append(-1)
             if (actual.count == 3) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
-        bus.asObservable(event: Events.Purchased.self, sticky: false, priority: 1).subscribe { event in
+        bus.asObservable(event: Events.Purchased.self, priority: 1).subscribe { event in
             actual.append(1)
             if (actual.count == 3) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
@@ -124,11 +124,11 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         
         let expect = [1, 0, -1]
         var actual = [Int]()
-        bus.asObservable(notificationName: .UserNotification, sticky: false, priority: -1).subscribe { event in
+        bus.asObservable(notificationName: .UserNotification, priority: -1).subscribe { event in
             actual.append(-1)
             if (actual.count == 3) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
-        bus.asObservable(notificationName: .UserNotification, sticky: false, priority: 1).subscribe { event in
+        bus.asObservable(notificationName: .UserNotification, priority: 1).subscribe { event in
             actual.append(1)
             if (actual.count == 3) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
@@ -190,6 +190,14 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
                     }
                     .disposed(by: self.disposeBag)
             }
+            DispatchQueue(label: "LoggedIn \(i)").async {
+                self.bus.asObservable(event: Events.LoggedIn.self, priority: i)
+                    .subscribeOn(MainScheduler.instance)
+                    .subscribe { _ in
+                        callCount += 1
+                    }
+                    .disposed(by: self.disposeBag)
+            }
             DispatchQueue(label: "UIPasteboard.changedNotification \(i)").async {
                 self.bus.asObservable(notificationName: UIPasteboard.changedNotification)
                     .subscribeOn(MainScheduler.instance)
@@ -198,18 +206,26 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
                     }
                     .disposed(by: self.disposeBag)
             }
+            DispatchQueue(label: "UIPasteboard.changedNotification \(i)").async {
+                self.bus.asObservable(notificationName: UIPasteboard.changedNotification, priority: i)
+                    .subscribeOn(MainScheduler.instance)
+                    .subscribe { _ in
+                        callCount += 1
+                    }
+                    .disposed(by: self.disposeBag)
+            }
         }
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 4.0) {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 5.0) {
             self.bus.post(event: Events.LoggedOut())
             self.bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
             UIPasteboard.general.string = "Test"
             executeExpectation.fulfill()
         }
         
-        wait(for: [executeExpectation], timeout: 5.0)
+        wait(for: [executeExpectation], timeout: 7.0)
         
-        XCTAssertEqual(callCount, 200)
-        XCTAssertEqual(bus.count, 200)
+        XCTAssertEqual(callCount, 300)
+        XCTAssertEqual(bus.count, 300)
     }
 }
