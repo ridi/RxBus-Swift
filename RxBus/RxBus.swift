@@ -88,22 +88,15 @@ public final class RxBus: CustomStringConvertible {
     
     // MARK: -
     
-    private let separator = Character("_")
-    private typealias EventName = String
-    private typealias EventPriority = Int
-    private typealias SubscriptionKey = String // EventName + separator + EventPriority
-    
     private var subjects = SynchronizedValues<SubscriptionKey, Any>()
     private var subscriptionCounts = SynchronizedValues<SubscriptionKey, Int>()
     private var stickyMap = SynchronizedValues<EventName, Any>()
     private var nsObservers = SynchronizedValues<EventName, Any>()
     
-    public var count: Int {
-        return subscriptionCounts.values.reduce(0, +)
-    }
-    
     public var description: String {
-        var string = "Subscription List:\n"
+        var string = "Subscription Total Count: \(count)\n"
+        
+        "Subscription List:\n"
         subjects.keys.sorted(by: { $0 > $1 }).forEach { key in
             string += "\t\(key)\n"
             let priority = sliceEventPriority(fromKey: key)
@@ -113,14 +106,7 @@ public final class RxBus: CustomStringConvertible {
         if subjects.isEmpty {
             string += "\tEmpty\n"
         }
-        string += "Sticky List:\n"
-        for (key, subject) in stickyMap {
-            string += "\t\(key)\n"
-            string += "\t\tSubject: \(subject)\n"
-        }
-        if stickyMap.isEmpty {
-            string += "\tEmpty\n"
-        }
+        
         string += "NSObserver List:\n"
         for (key, nsObserver) in nsObservers {
             string += "\t\(key)\n"
@@ -129,10 +115,25 @@ public final class RxBus: CustomStringConvertible {
         if nsObservers.isEmpty {
             string += "\tEmpty\n"
         }
+        
+        string += "Sticky List:\n"
+        for (key, subject) in stickyMap {
+            string += "\t\(key)\n"
+            string += "\t\tSubject: \(subject)\n"
+        }
+        if stickyMap.isEmpty {
+            string += "\tEmpty\n"
+        }
+        
         return "\(string)"
     }
     
-    // MARK: -
+    // MARK: - String Util
+    
+    private let separator = Character("_")
+    private typealias EventName = String
+    private typealias EventPriority = Int
+    private typealias SubscriptionKey = String // EventName + separator + EventPriority
     
     private func makeSubscriptionKey(eventName: EventName, priority: EventPriority) -> SubscriptionKey {
         return "\(eventName)\(separator)\(priority)"
@@ -149,7 +150,11 @@ public final class RxBus: CustomStringConvertible {
         return 0
     }
     
-    // MARK: -
+    // MARK: - Subscription Count
+    
+    public var count: Int {
+        return subscriptionCounts.values.reduce(0, +)
+    }
     
     private func increaseSubscriptionCount(forKey key: SubscriptionKey) {
         if let count = subscriptionCounts[key] {
@@ -182,6 +187,8 @@ public final class RxBus: CustomStringConvertible {
     public func removeAllStickys() {
         stickyMap.removeAll()
     }
+    
+    // MARK: - BusEvent
     
     public func asObservable<T: BusEvent>(event: T.Type, priority: Int) -> Observable<T> {
         return asObservable(event: event, sticky: false, priority: priority)
@@ -232,7 +239,7 @@ public final class RxBus: CustomStringConvertible {
         return stickyMap.removeValue(forKey: event.name) as? T
     }
     
-    // MARK: -
+    // MARK: - Notification
     
     private func dispatchNotification(_ notification: Notification) {
         let eventName = notification.name.rawValue
