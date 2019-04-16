@@ -96,8 +96,8 @@ public final class RxBus: CustomStringConvertible {
     public var description: String {
         var string = "Subscription Total Count: \(count)\n"
         
-        "Subscription List:\n"
-        subjects.keys.sorted(by: { $0 > $1 }).forEach { key in
+        string += "Subscription List:\n"
+        subjects.keys.sorted(by: { compareKey($0, $1) }).forEach { key in
             string += "\t\(key)\n"
             let priority = sliceEventPriority(fromKey: key)
             let count = subscriptionCounts[key] ?? 0
@@ -148,6 +148,10 @@ public final class RxBus: CustomStringConvertible {
             return Int(string) ?? 0
         }
         return 0
+    }
+    
+    private func compareKey(_ string1: String, _ string2: String) -> Bool {
+        return string1.compare(string2, options: [.literal, .numeric]) == .orderedDescending
     }
     
     // MARK: - Subscription Count
@@ -227,7 +231,7 @@ public final class RxBus: CustomStringConvertible {
             stickyMap[eventName] = event
         }
         subjects.filter { $0.key.hasPrefix(eventName) }
-            .sorted(by: { $0.key > $1.key })
+            .sorted(by: { compareKey($0.key, $1.key) })
             .forEach { ($0.value as? PublishSubject<T>)?.onNext(event) }
     }
     
@@ -244,7 +248,7 @@ public final class RxBus: CustomStringConvertible {
     private func dispatchNotification(_ notification: Notification) {
         let eventName = notification.name.rawValue
         subjects.filter { $0.key.hasPrefix(eventName) }
-            .sorted(by: { $0.key > $1.key })
+            .sorted(by: { compareKey($0.key, $1.key) })
             .forEach { ($0.value as? PublishSubject<Notification>)?.onNext(notification) }
     }
     

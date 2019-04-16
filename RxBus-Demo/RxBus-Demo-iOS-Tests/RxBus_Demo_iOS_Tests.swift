@@ -59,26 +59,34 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
     func testEventSubscriptionPriority() {
         let executeExpectation = XCTestExpectation(description: "Test event subscription priority...")
         
-        let expect = [1, 0, -1]
+        let expect = [10, 2, 1, 0, -1]
         var actual = [Int]()
         bus.asObservable(event: Events.Purchased.self, priority: -1).subscribe { event in
             actual.append(-1)
-            if (actual.count == 3) { executeExpectation.fulfill() }
+            if (actual.count == 5) { executeExpectation.fulfill() }
+        }.disposed(by: disposeBag)
+        bus.asObservable(event: Events.Purchased.self, priority: 2).subscribe { event in
+            actual.append(2)
+            if (actual.count == 5) { executeExpectation.fulfill() }
+        }.disposed(by: disposeBag)
+        bus.asObservable(event: Events.Purchased.self, priority: 10).subscribe { event in
+            actual.append(10)
+            if (actual.count == 5) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
         bus.asObservable(event: Events.Purchased.self, priority: 1).subscribe { event in
             actual.append(1)
-            if (actual.count == 3) { executeExpectation.fulfill() }
+            if (actual.count == 5) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
         bus.asObservable(event: Events.Purchased.self).subscribe { event in
             actual.append(0)
-            if (actual.count == 3) { executeExpectation.fulfill() }
+            if (actual.count == 5) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
         bus.post(event: Events.Purchased(tid: 1001))
         
         wait(for: [executeExpectation], timeout: 1.0)
         
         XCTAssert(actual.elementsEqual(expect))
-        XCTAssertEqual(bus.count, 3)
+        XCTAssertEqual(bus.count, 5)
     }
     
     func testSystemNotificationSubscriptionAndPosting() {
@@ -123,26 +131,34 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
     func testUserNotificationSubscriptionPriority() {
         let executeExpectation = XCTestExpectation(description: "Test user notification subscription priority...")
         
-        let expect = [1, 0, -1]
+        let expect = [10, 2, 1, 0, -1]
         var actual = [Int]()
         bus.asObservable(notificationName: .UserNotification, priority: -1).subscribe { event in
             actual.append(-1)
-            if (actual.count == 3) { executeExpectation.fulfill() }
+            if (actual.count == 5) { executeExpectation.fulfill() }
+        }.disposed(by: disposeBag)
+        bus.asObservable(notificationName: .UserNotification, priority: 2).subscribe { event in
+            actual.append(2)
+            if (actual.count == 5) { executeExpectation.fulfill() }
+        }.disposed(by: disposeBag)
+        bus.asObservable(notificationName: .UserNotification, priority: 10).subscribe { event in
+            actual.append(10)
+            if (actual.count == 5) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
         bus.asObservable(notificationName: .UserNotification, priority: 1).subscribe { event in
             actual.append(1)
-            if (actual.count == 3) { executeExpectation.fulfill() }
+            if (actual.count == 5) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
         bus.asObservable(notificationName: .UserNotification).subscribe { event in
             actual.append(0)
-            if (actual.count == 3) { executeExpectation.fulfill() }
+            if (actual.count == 5) { executeExpectation.fulfill() }
         }.disposed(by: disposeBag)
         bus.post(notificationName: .UserNotification)
         
         wait(for: [executeExpectation], timeout: 1.0)
         
         XCTAssert(actual.elementsEqual(expect))
-        XCTAssertEqual(bus.count, 3)
+        XCTAssertEqual(bus.count, 5)
     }
     
     func testSticky() {
