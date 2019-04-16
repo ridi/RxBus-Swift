@@ -207,8 +207,8 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
                     }
                     .disposed(by: self.disposeBag)
             }
-            DispatchQueue(label: "LoggedIn \(i)").async {
-                self.bus.asObservable(event: Events.LoggedIn.self, priority: i)
+            DispatchQueue(label: "LoggedIn \(i + 1)").async {
+                self.bus.asObservable(event: Events.LoggedIn.self, priority: i + 1)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
@@ -223,8 +223,8 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
                     }
                     .disposed(by: self.disposeBag)
             }
-            DispatchQueue(label: "UIPasteboard.changedNotification \(i)").async {
-                self.bus.asObservable(notificationName: UIPasteboard.changedNotification, priority: i)
+            DispatchQueue(label: "UIPasteboard.changedNotification \(i + 1)").async {
+                self.bus.asObservable(notificationName: UIPasteboard.changedNotification, priority: i + 1)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
@@ -233,16 +233,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
             }
         }
         
-        DispatchQueue.global().asyncAfter(deadline: .now() + 5.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             self.bus.post(event: Events.LoggedOut())
             self.bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
             UIPasteboard.general.string = "Test"
             executeExpectation.fulfill()
         }
         
-        wait(for: [executeExpectation], timeout: 7.0)
+        wait(for: [executeExpectation], timeout: 5.0)
         
-        XCTAssertEqual(callCount, 300)
-        XCTAssertEqual(bus.count, 300)
+        XCTAssertEqual(bus.count, callCount)
     }
 }

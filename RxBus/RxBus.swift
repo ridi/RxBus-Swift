@@ -11,6 +11,7 @@ public extension BusEvent {
 }
 
 private let accessQueue = DispatchQueue(label: "com.ridi.rxbus.accessQueue", attributes: .concurrent)
+private let locker = NSLock()
 
 private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
     private var _values = [Key: Value]()
@@ -23,11 +24,7 @@ private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
     
     subscript(key: Key) -> Value? {
         get {
-            var value: Value?
-            accessQueue.sync {
-                value = self._values[key]
-            }
-            return value
+            return accessQueue.sync { self._values[key] }
         }
         set {
             accessQueue.async(flags: .barrier) {
@@ -37,27 +34,15 @@ private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
     }
     
     var keys: Dictionary<Key, Value>.Keys {
-        var keys: Dictionary<Key, Value>.Keys!
-        accessQueue.sync {
-            keys = self._values.keys
-        }
-        return keys
+        return accessQueue.sync { self._values.keys }
     }
     
     var values: Dictionary<Key, Value>.Values {
-        var values: Dictionary<Key, Value>.Values!
-        accessQueue.sync {
-            values = self._values.values
-        }
-        return values
+        return accessQueue.sync { self._values.values }
     }
     
     var isEmpty: Bool {
-        var isEmpty = false
-        accessQueue.sync {
-            isEmpty = self._values.isEmpty
-        }
-        return isEmpty
+        return accessQueue.sync { self._values.isEmpty }
     }
     
     func removeValue(forKey key: Key) -> Value? {
@@ -77,7 +62,7 @@ private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
     typealias Iterator = DictionaryIterator<Key, Value>
     
     func makeIterator() -> Dictionary<Key, Value>.Iterator {
-        return _values.makeIterator()
+        return accessQueue.sync { self._values.makeIterator() }
     }
 }
 
@@ -200,9 +185,11 @@ public final class RxBus: CustomStringConvertible {
     
     public func asObservable<T: BusEvent>(event: T.Type, sticky: Bool = false, priority: Int = 0) -> Observable<T> {
         let key = makeSubscriptionKey(eventName: event.name, priority: priority)
+        locker.lock()
         if subjects[key] == nil {
             subjects[key] = PublishSubject<T>()
         }
+        locker.unlock()
         let observable = (subjects[key] as! PublishSubject<T>).do(
             onNext: nil,
             onError: nil,
@@ -252,18 +239,6 @@ public final class RxBus: CustomStringConvertible {
             .forEach { ($0.value as? PublishSubject<Notification>)?.onNext(notification) }
     }
     
-    private func makeNotificationObservable(name: Notification.Name) -> Observable<Notification> {
-        let observable = PublishSubject<Notification>()
-        let nsObserver = nsObservers[name.rawValue]
-        if nsObserver == nil {
-            let base = NotificationCenter.default.rx.base
-            nsObservers[name.rawValue] = base.addObserver(forName: name, object: nil, queue: nil) { notification in
-                self.dispatchNotification(notification)
-            }
-        }
-        return observable
-    }
-    
     public func asObservable(notificationName name: Notification.Name, priority: Int) -> Observable<Notification> {
         return asObservable(notificationName: name, sticky: false, priority: priority)
     }
@@ -274,9 +249,17 @@ public final class RxBus: CustomStringConvertible {
         priority: Int = 0
     ) -> Observable<Notification> {
         let key = makeSubscriptionKey(eventName: name.rawValue, priority: priority)
+        locker.lock()
         if subjects[key] == nil {
-            subjects[key] = makeNotificationObservable(name: name)
+            subjects[key] = PublishSubject<Notification>()
         }
+        if nsObservers[name.rawValue] == nil {
+            let center = NotificationCenter.default
+            nsObservers[name.rawValue] = center.addObserver(forName: name, object: nil, queue: nil) { notification in
+                self.dispatchNotification(notification)
+            }
+        }
+        locker.unlock()
         let observable = (subjects[key] as! Observable<Notification>).do(
             onNext: nil,
             onError: nil,
