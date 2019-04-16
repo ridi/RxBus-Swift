@@ -10,17 +10,10 @@ public extension BusEvent {
     }
 }
 
-private let accessQueue = DispatchQueue(label: "com.ridi.rxbus.accessQueue", attributes: .concurrent)
-private let locker = NSLock()
-
 private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
+    private let accessQueue = DispatchQueue(label: "com.ridi.rxbus.accessQueue", attributes: .concurrent)
+    
     private var _values = [Key: Value]()
-    
-    init() { }
-    
-    init(key: Key, value: Value) {
-        self[key] = value
-    }
     
     subscript(key: Key) -> Value? {
         get {
@@ -72,6 +65,8 @@ public final class RxBus: CustomStringConvertible {
     private init() { }
     
     // MARK: -
+    
+    private let locker = NSLock()
     
     private var subjects = SynchronizedValues<SubscriptionKey, Any>()
     private var subscriptionCounts = SynchronizedValues<SubscriptionKey, Int>()
