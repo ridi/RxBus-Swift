@@ -115,6 +115,14 @@ public final class RxBus: CustomStringConvertible {
         if stickyMap.isEmpty {
             string += "\tEmpty\n"
         }
+        string += "NSObserver List:\n"
+        for (key, nsObserver) in nsObservers {
+            string += "\t\(key)\n"
+            string += "\t\tNSObserver: \(nsObserver)\n"
+        }
+        if nsObservers.isEmpty {
+            string += "\tEmpty\n"
+        }
         return "\(string)"
     }
     
