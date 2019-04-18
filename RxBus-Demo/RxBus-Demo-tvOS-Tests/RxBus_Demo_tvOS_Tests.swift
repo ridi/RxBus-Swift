@@ -16,11 +16,7 @@ extension Notification.Name {
     static let UserNotification = Notification.Name("UserNotification")
 }
 
-extension NSPasteboard {
-    static let changedNotification = Notification.Name("NSPasteboardChangedNotification")
-}
-
-class RxBus_Demo_macOS_Tests: XCTestCase {
+class RxBus_Demo_tvOS_Tests: XCTestCase {
     private let bus = RxBus.shared
     private var disposeBag: DisposeBag!
     
@@ -103,7 +99,6 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
     
     func testSystemNotificationSubscriptionAndPosting() {
         let executeExpectation = XCTestExpectation(description: "Test system notification subscription and posting...")
-        
         bus.asObservable(notificationName: .NSUndoManagerDidUndoChange).subscribe { event in
             executeExpectation.fulfill()
         }.disposed(by: disposeBag)

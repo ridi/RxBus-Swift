@@ -10,6 +10,7 @@
 		12BCB0C76EA94853013A92F4 /* Pods_RxBus_Demo_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67592A8E1082825AE9E573E9 /* Pods_RxBus_Demo_tvOS.framework */; };
 		2A71122322646D70005100C3 /* RxBus_Demo_iOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71122222646D70005100C3 /* RxBus_Demo_iOS_Tests.swift */; };
 		2A9B58742268271F00AEE9AA /* RxBus_Demo_macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B58732268271F00AEE9AA /* RxBus_Demo_macOS_Tests.swift */; };
+		2A9B58822268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B58812268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift */; };
 		2FE0DAA5F46BEA60F61F1F42 /* Pods_RxBus_Demo_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580E1CC568ED22EC7E1AA693 /* Pods_RxBus_Demo_macOS_Tests.framework */; };
 		8394D7C51F7CF3140078A45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7C41F7CF3140078A45B /* AppDelegate.swift */; };
 		8394D7C71F7CF3140078A45B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7C61F7CF3140078A45B /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		99F9408215B089DB480D20F7 /* Pods_RxBus_Demo_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B785A32B1494BB53EA65BC11 /* Pods_RxBus_Demo_macOS.framework */; };
 		B61DF8532A1B923B6B713278 /* Pods_RxBus_Demo_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD06469F3B39498FEF5C1563 /* Pods_RxBus_Demo_iOS.framework */; };
 		CB845F8B4E7A2053C90E103D /* Pods_RxBus_Demo_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0971F37F8F28F342229637C8 /* Pods_RxBus_Demo_iOS_Tests.framework */; };
+		D34822132530381F038EC4DA /* Pods_RxBus_Demo_tvOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E13C677C111C033F43547A35 /* Pods_RxBus_Demo_tvOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,13 @@
 			remoteGlobalIDString = 8394D7DC1F7DD4030078A45B;
 			remoteInfo = "RxBus-Demo-macOS";
 		};
+		2A9B58842268483000AEE9AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8394D7B91F7CF3140078A45B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8394D8191F7DED2E0078A45B;
+			remoteInfo = "RxBus-Demo-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +64,9 @@
 		2A9B58712268271F00AEE9AA /* RxBus-Demo-macOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxBus-Demo-macOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9B58732268271F00AEE9AA /* RxBus_Demo_macOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBus_Demo_macOS_Tests.swift; sourceTree = "<group>"; };
 		2A9B58752268271F00AEE9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9B587F2268483000AEE9AA /* RxBus-Demo-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxBus-Demo-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9B58812268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBus_Demo_tvOS_Tests.swift; sourceTree = "<group>"; };
+		2A9B58832268483000AEE9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2BEE5E2336A9CAE76E9E35 /* Pods_RxBus_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CDF8BCA65D0BA2F22D9481E /* Pods-RxBus-Demo-macOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-macOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-macOS-Tests/Pods-RxBus-Demo-macOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4476F11D6A3BB5B85E5BB0CC /* Pods-RxBus-Demo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,8 +98,11 @@
 		B90F5193380B70AC5F4F1B69 /* Pods-RxBus-Demo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD06469F3B39498FEF5C1563 /* Pods_RxBus_Demo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCB84BFABFEA034C7EF3376 /* Pods-RxBus-Demo-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS-Tests/Pods-RxBus-Demo-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E13C677C111C033F43547A35 /* Pods_RxBus_Demo_tvOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_tvOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E217E30ADEB1301B24E32C12 /* Pods-RxBus-Demo-tvOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E8C7626C2BC9E1622554F17F /* Pods-RxBus-Demo-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS-Tests/Pods-RxBus-Demo-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EE1C3C6973C16C83ABF6E84B /* Pods-RxBus-Demo-macOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-macOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-macOS-Tests/Pods-RxBus-Demo-macOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		F1BC79DABF5FEA35DD5A7997 /* Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +119,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FE0DAA5F46BEA60F61F1F42 /* Pods_RxBus_Demo_macOS_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9B587C2268483000AEE9AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D34822132530381F038EC4DA /* Pods_RxBus_Demo_tvOS_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +175,15 @@
 			path = "RxBus-Demo-macOS-Tests";
 			sourceTree = "<group>";
 		};
+		2A9B58802268483000AEE9AA /* RxBus-Demo-tvOS-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2A9B58812268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift */,
+				2A9B58832268483000AEE9AA /* Info.plist */,
+			);
+			path = "RxBus-Demo-tvOS-Tests";
+			sourceTree = "<group>";
+		};
 		4E128B76F094689F9CFC4AAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +193,7 @@
 				67592A8E1082825AE9E573E9 /* Pods_RxBus_Demo_tvOS.framework */,
 				0971F37F8F28F342229637C8 /* Pods_RxBus_Demo_iOS_Tests.framework */,
 				580E1CC568ED22EC7E1AA693 /* Pods_RxBus_Demo_macOS_Tests.framework */,
+				E13C677C111C033F43547A35 /* Pods_RxBus_Demo_tvOS_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +206,7 @@
 				8394D7DE1F7DD4030078A45B /* RxBus-Demo-macOS */,
 				2A9B58722268271F00AEE9AA /* RxBus-Demo-macOS-Tests */,
 				8394D81B1F7DED2E0078A45B /* RxBus-Demo-tvOS */,
+				2A9B58802268483000AEE9AA /* RxBus-Demo-tvOS-Tests */,
 				8394D7C21F7CF3140078A45B /* Products */,
 				DBC6BC38BED26F5D0FC51548 /* Pods */,
 				4E128B76F094689F9CFC4AAD /* Frameworks */,
@@ -187,6 +221,7 @@
 				8394D81A1F7DED2E0078A45B /* RxBus-Demo-tvOS.app */,
 				2A71122022646D70005100C3 /* RxBus-Demo-iOS-Tests.xctest */,
 				2A9B58712268271F00AEE9AA /* RxBus-Demo-macOS-Tests.xctest */,
+				2A9B587F2268483000AEE9AA /* RxBus-Demo-tvOS-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +276,8 @@
 				E8C7626C2BC9E1622554F17F /* Pods-RxBus-Demo-iOS-Tests.release.xcconfig */,
 				3CDF8BCA65D0BA2F22D9481E /* Pods-RxBus-Demo-macOS-Tests.debug.xcconfig */,
 				EE1C3C6973C16C83ABF6E84B /* Pods-RxBus-Demo-macOS-Tests.release.xcconfig */,
+				F1BC79DABF5FEA35DD5A7997 /* Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig */,
+				E217E30ADEB1301B24E32C12 /* Pods-RxBus-Demo-tvOS-Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -286,6 +323,26 @@
 			name = "RxBus-Demo-macOS-Tests";
 			productName = "RxBus-Demo-macOS-Tests";
 			productReference = 2A9B58712268271F00AEE9AA /* RxBus-Demo-macOS-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A9B587E2268483000AEE9AA /* RxBus-Demo-tvOS-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9B58882268483000AEE9AA /* Build configuration list for PBXNativeTarget "RxBus-Demo-tvOS-Tests" */;
+			buildPhases = (
+				414D16CA34F2EED087AD2167 /* [CP] Check Pods Manifest.lock */,
+				2A9B587B2268483000AEE9AA /* Sources */,
+				2A9B587C2268483000AEE9AA /* Frameworks */,
+				2A9B587D2268483000AEE9AA /* Resources */,
+				1C045D652B9A827EE7FB3B48 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A9B58852268483000AEE9AA /* PBXTargetDependency */,
+			);
+			name = "RxBus-Demo-tvOS-Tests";
+			productName = "RxBus-Demo-tvOS-Tests";
+			productReference = 2A9B587F2268483000AEE9AA /* RxBus-Demo-tvOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		8394D7C01F7CF3140078A45B /* RxBus-Demo-iOS */ = {
@@ -368,6 +425,11 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8394D7DC1F7DD4030078A45B;
 					};
+					2A9B587E2268483000AEE9AA = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8394D8191F7DED2E0078A45B;
+					};
 					8394D7C01F7CF3140078A45B = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
@@ -397,10 +459,11 @@
 			projectRoot = "";
 			targets = (
 				8394D7C01F7CF3140078A45B /* RxBus-Demo-iOS */,
-				8394D7DC1F7DD4030078A45B /* RxBus-Demo-macOS */,
-				8394D8191F7DED2E0078A45B /* RxBus-Demo-tvOS */,
 				2A71121F22646D70005100C3 /* RxBus-Demo-iOS-Tests */,
+				8394D7DC1F7DD4030078A45B /* RxBus-Demo-macOS */,
 				2A9B58702268271F00AEE9AA /* RxBus-Demo-macOS-Tests */,
+				8394D8191F7DED2E0078A45B /* RxBus-Demo-tvOS */,
+				2A9B587E2268483000AEE9AA /* RxBus-Demo-tvOS-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -414,6 +477,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2A9B586F2268271F00AEE9AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9B587D2268483000AEE9AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,6 +539,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C045D652B9A827EE7FB3B48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxBus-tvOS/RxBus.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-tvOS/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		20F5846D8B80B126A8B53995 /* [CP] Check Pods Manifest.lock */ = {
@@ -565,6 +659,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		414D16CA34F2EED087AD2167 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxBus-Demo-tvOS-Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		48D26CB6B85358A078FAE1B7 /* [CP] Check Pods Manifest.lock */ = {
@@ -726,6 +842,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A9B587B2268483000AEE9AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9B58822268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8394D7BD1F7CF3140078A45B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -765,6 +889,11 @@
 			isa = PBXTargetDependency;
 			target = 8394D7DC1F7DD4030078A45B /* RxBus-Demo-macOS */;
 			targetProxy = 2A9B58762268271F00AEE9AA /* PBXContainerItemProxy */;
+		};
+		2A9B58852268483000AEE9AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8394D8191F7DED2E0078A45B /* RxBus-Demo-tvOS */;
+			targetProxy = 2A9B58842268483000AEE9AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -897,6 +1026,53 @@
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-macOS.app/Contents/MacOS/RxBus-Demo-macOS";
+			};
+			name = Release;
+		};
+		2A9B58862268483000AEE9AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1BC79DABF5FEA35DD5A7997 /* Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "RxBus-Demo-tvOS-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-tvOS.app/RxBus-Demo-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 12.2;
+			};
+			name = Debug;
+		};
+		2A9B58872268483000AEE9AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E217E30ADEB1301B24E32C12 /* Pods-RxBus-Demo-tvOS-Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "RxBus-Demo-tvOS-Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-tvOS-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-tvOS.app/RxBus-Demo-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 12.2;
 			};
 			name = Release;
 		};
@@ -1128,6 +1304,15 @@
 			buildConfigurations = (
 				2A9B58782268271F00AEE9AA /* Debug */,
 				2A9B58792268271F00AEE9AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9B58882268483000AEE9AA /* Build configuration list for PBXNativeTarget "RxBus-Demo-tvOS-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9B58862268483000AEE9AA /* Debug */,
+				2A9B58872268483000AEE9AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
