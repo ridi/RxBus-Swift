@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.swift_version = '4.2'
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
-  s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '3.0'
   s.source       = { :git => 'https://github.com/ridi/RxBus-Swift.git', :tag => s.version }
   s.source_files = 'RxBus/RxBus.swift'
   s.frameworks   = 'Foundation'

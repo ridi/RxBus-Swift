@@ -29,3 +29,13 @@ target 'RxBus-Demo-tvOS-Tests' do
   platform :tvos, '9.0'
   pod 'RxBus', :path => '../'
 end
+
+target 'RxBus-Demo-watchOS' do
+  platform :watchos, '3.0'
+  pod 'RxBus', :path => '../'
+end
+
+target 'RxBus-Demo-watchOS Extension' do
+  platform :watchos, '3.0'
+  pod 'RxBus', :path => '../'
+end

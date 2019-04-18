@@ -11,7 +11,16 @@
 		2A71122322646D70005100C3 /* RxBus_Demo_iOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A71122222646D70005100C3 /* RxBus_Demo_iOS_Tests.swift */; };
 		2A9B58742268271F00AEE9AA /* RxBus_Demo_macOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B58732268271F00AEE9AA /* RxBus_Demo_macOS_Tests.swift */; };
 		2A9B58822268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B58812268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift */; };
+		2A9B58B722684D9B00AEE9AA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B58B522684D9B00AEE9AA /* Interface.storyboard */; };
+		2A9B58B922684D9C00AEE9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B58B822684D9C00AEE9AA /* Assets.xcassets */; };
+		2A9B58C022684D9C00AEE9AA /* RxBus-Demo-watchOS Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A9B58BF22684D9C00AEE9AA /* RxBus-Demo-watchOS Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2A9B58C522684D9C00AEE9AA /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B58C422684D9C00AEE9AA /* InterfaceController.swift */; };
+		2A9B58C722684D9C00AEE9AA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B58C622684D9C00AEE9AA /* ExtensionDelegate.swift */; };
+		2A9B58C922684D9D00AEE9AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B58C822684D9D00AEE9AA /* Assets.xcassets */; };
+		2A9B58CD22684D9D00AEE9AA /* RxBus-Demo-watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2A9B58B322684D9B00AEE9AA /* RxBus-Demo-watchOS.app */; };
 		2FE0DAA5F46BEA60F61F1F42 /* Pods_RxBus_Demo_macOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580E1CC568ED22EC7E1AA693 /* Pods_RxBus_Demo_macOS_Tests.framework */; };
+		3E1D97AE2FBA8AE9A1B3AE65 /* Pods_RxBus_Demo_watchOS_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92FA03E13C9D7BBBFA03522C /* Pods_RxBus_Demo_watchOS_Extension.framework */; };
+		4124979559E30A44C1D3DF53 /* Pods_RxBus_Demo_watchOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9EAA5D3559EE02E48A3A57 /* Pods_RxBus_Demo_watchOS.framework */; };
 		8394D7C51F7CF3140078A45B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7C41F7CF3140078A45B /* AppDelegate.swift */; };
 		8394D7C71F7CF3140078A45B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394D7C61F7CF3140078A45B /* ViewController.swift */; };
 		8394D7CA1F7CF3140078A45B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8394D7C81F7CF3140078A45B /* Main.storyboard */; };
@@ -53,7 +62,46 @@
 			remoteGlobalIDString = 8394D8191F7DED2E0078A45B;
 			remoteInfo = "RxBus-Demo-tvOS";
 		};
+		2A9B58C122684D9C00AEE9AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8394D7B91F7CF3140078A45B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9B58BE22684D9C00AEE9AA;
+			remoteInfo = "RxBus-Demo-watchOS Extension";
+		};
+		2A9B58CB22684D9D00AEE9AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8394D7B91F7CF3140078A45B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A9B58B222684D9B00AEE9AA;
+			remoteInfo = "RxBus-Demo-watchOS";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A9B58D322684D9D00AEE9AA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A9B58C022684D9C00AEE9AA /* RxBus-Demo-watchOS Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9B58D522684D9D00AEE9AA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2A9B58CD22684D9D00AEE9AA /* RxBus-Demo-watchOS.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0971F37F8F28F342229637C8 /* Pods_RxBus_Demo_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +115,15 @@
 		2A9B587F2268483000AEE9AA /* RxBus-Demo-tvOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxBus-Demo-tvOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9B58812268483000AEE9AA /* RxBus_Demo_tvOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBus_Demo_tvOS_Tests.swift; sourceTree = "<group>"; };
 		2A9B58832268483000AEE9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9B58B322684D9B00AEE9AA /* RxBus-Demo-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RxBus-Demo-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9B58B622684D9B00AEE9AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		2A9B58B822684D9C00AEE9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A9B58BA22684D9C00AEE9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A9B58BF22684D9C00AEE9AA /* RxBus-Demo-watchOS Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RxBus-Demo-watchOS Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A9B58C422684D9C00AEE9AA /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		2A9B58C622684D9C00AEE9AA /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		2A9B58C822684D9D00AEE9AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A9B58CA22684D9D00AEE9AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C2BEE5E2336A9CAE76E9E35 /* Pods_RxBus_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CDF8BCA65D0BA2F22D9481E /* Pods-RxBus-Demo-macOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-macOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-macOS-Tests/Pods-RxBus-Demo-macOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		4476F11D6A3BB5B85E5BB0CC /* Pods-RxBus-Demo-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -93,16 +150,22 @@
 		8394D8231F7DED2E0078A45B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8394D8251F7DED2E0078A45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E098F5CA3DFA5F03B1A0471 /* Pods-RxBus-Demo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		92FA03E13C9D7BBBFA03522C /* Pods_RxBus_Demo_watchOS_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_watchOS_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC86FCBA53C35A9808AF3615 /* Pods-RxBus-Demo-watchOS Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-watchOS Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-watchOS Extension/Pods-RxBus-Demo-watchOS Extension.release.xcconfig"; sourceTree = "<group>"; };
 		B220B4C357B786AFF5E9E243 /* Pods-RxBus-Demo-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-macOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS.release.xcconfig"; sourceTree = "<group>"; };
 		B785A32B1494BB53EA65BC11 /* Pods_RxBus_Demo_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B90F5193380B70AC5F4F1B69 /* Pods-RxBus-Demo-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		BD06469F3B39498FEF5C1563 /* Pods_RxBus_Demo_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFCB84BFABFEA034C7EF3376 /* Pods-RxBus-Demo-iOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS-Tests/Pods-RxBus-Demo-iOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C38A581FDC969B7F338E4161 /* Pods-RxBus-Demo-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-watchOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-watchOS/Pods-RxBus-Demo-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C80812F205C2ED195215FD64 /* Pods-RxBus-Demo-watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-watchOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-watchOS/Pods-RxBus-Demo-watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		D74688327C732551CCA89C66 /* Pods-RxBus-Demo-watchOS Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-watchOS Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-watchOS Extension/Pods-RxBus-Demo-watchOS Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		E13C677C111C033F43547A35 /* Pods_RxBus_Demo_tvOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_tvOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E217E30ADEB1301B24E32C12 /* Pods-RxBus-Demo-tvOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E8C7626C2BC9E1622554F17F /* Pods-RxBus-Demo-iOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-iOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-iOS-Tests/Pods-RxBus-Demo-iOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		EE1C3C6973C16C83ABF6E84B /* Pods-RxBus-Demo-macOS-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-macOS-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-macOS-Tests/Pods-RxBus-Demo-macOS-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F1BC79DABF5FEA35DD5A7997 /* Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD9EAA5D3559EE02E48A3A57 /* Pods_RxBus_Demo_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxBus_Demo_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +193,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A9B58BC22684D9C00AEE9AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E1D97AE2FBA8AE9A1B3AE65 /* Pods_RxBus_Demo_watchOS_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8394D7BE1F7CF3140078A45B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -151,6 +222,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				12BCB0C76EA94853013A92F4 /* Pods_RxBus_Demo_tvOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		857EFF7A03772327CE5A07BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4124979559E30A44C1D3DF53 /* Pods_RxBus_Demo_watchOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +263,27 @@
 			path = "RxBus-Demo-tvOS-Tests";
 			sourceTree = "<group>";
 		};
+		2A9B58B422684D9B00AEE9AA /* RxBus-Demo-watchOS */ = {
+			isa = PBXGroup;
+			children = (
+				2A9B58B522684D9B00AEE9AA /* Interface.storyboard */,
+				2A9B58B822684D9C00AEE9AA /* Assets.xcassets */,
+				2A9B58BA22684D9C00AEE9AA /* Info.plist */,
+			);
+			path = "RxBus-Demo-watchOS";
+			sourceTree = "<group>";
+		};
+		2A9B58C322684D9C00AEE9AA /* RxBus-Demo-watchOS Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2A9B58C422684D9C00AEE9AA /* InterfaceController.swift */,
+				2A9B58C622684D9C00AEE9AA /* ExtensionDelegate.swift */,
+				2A9B58C822684D9D00AEE9AA /* Assets.xcassets */,
+				2A9B58CA22684D9D00AEE9AA /* Info.plist */,
+			);
+			path = "RxBus-Demo-watchOS Extension";
+			sourceTree = "<group>";
+		};
 		4E128B76F094689F9CFC4AAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +294,8 @@
 				0971F37F8F28F342229637C8 /* Pods_RxBus_Demo_iOS_Tests.framework */,
 				580E1CC568ED22EC7E1AA693 /* Pods_RxBus_Demo_macOS_Tests.framework */,
 				E13C677C111C033F43547A35 /* Pods_RxBus_Demo_tvOS_Tests.framework */,
+				FD9EAA5D3559EE02E48A3A57 /* Pods_RxBus_Demo_watchOS.framework */,
+				92FA03E13C9D7BBBFA03522C /* Pods_RxBus_Demo_watchOS_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,6 +309,8 @@
 				2A9B58722268271F00AEE9AA /* RxBus-Demo-macOS-Tests */,
 				8394D81B1F7DED2E0078A45B /* RxBus-Demo-tvOS */,
 				2A9B58802268483000AEE9AA /* RxBus-Demo-tvOS-Tests */,
+				2A9B58B422684D9B00AEE9AA /* RxBus-Demo-watchOS */,
+				2A9B58C322684D9C00AEE9AA /* RxBus-Demo-watchOS Extension */,
 				8394D7C21F7CF3140078A45B /* Products */,
 				DBC6BC38BED26F5D0FC51548 /* Pods */,
 				4E128B76F094689F9CFC4AAD /* Frameworks */,
@@ -222,6 +326,8 @@
 				2A71122022646D70005100C3 /* RxBus-Demo-iOS-Tests.xctest */,
 				2A9B58712268271F00AEE9AA /* RxBus-Demo-macOS-Tests.xctest */,
 				2A9B587F2268483000AEE9AA /* RxBus-Demo-tvOS-Tests.xctest */,
+				2A9B58B322684D9B00AEE9AA /* RxBus-Demo-watchOS.app */,
+				2A9B58BF22684D9C00AEE9AA /* RxBus-Demo-watchOS Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,6 +384,10 @@
 				EE1C3C6973C16C83ABF6E84B /* Pods-RxBus-Demo-macOS-Tests.release.xcconfig */,
 				F1BC79DABF5FEA35DD5A7997 /* Pods-RxBus-Demo-tvOS-Tests.debug.xcconfig */,
 				E217E30ADEB1301B24E32C12 /* Pods-RxBus-Demo-tvOS-Tests.release.xcconfig */,
+				C38A581FDC969B7F338E4161 /* Pods-RxBus-Demo-watchOS.debug.xcconfig */,
+				C80812F205C2ED195215FD64 /* Pods-RxBus-Demo-watchOS.release.xcconfig */,
+				D74688327C732551CCA89C66 /* Pods-RxBus-Demo-watchOS Extension.debug.xcconfig */,
+				AC86FCBA53C35A9808AF3615 /* Pods-RxBus-Demo-watchOS Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -345,6 +455,44 @@
 			productReference = 2A9B587F2268483000AEE9AA /* RxBus-Demo-tvOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		2A9B58B222684D9B00AEE9AA /* RxBus-Demo-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9B58D422684D9D00AEE9AA /* Build configuration list for PBXNativeTarget "RxBus-Demo-watchOS" */;
+			buildPhases = (
+				9AC9850575BC43187736C4B5 /* [CP] Check Pods Manifest.lock */,
+				2A9B58B122684D9B00AEE9AA /* Resources */,
+				2A9B58D322684D9D00AEE9AA /* Embed App Extensions */,
+				857EFF7A03772327CE5A07BA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A9B58C222684D9C00AEE9AA /* PBXTargetDependency */,
+			);
+			name = "RxBus-Demo-watchOS";
+			productName = "RxBus-Demo-watchOS";
+			productReference = 2A9B58B322684D9B00AEE9AA /* RxBus-Demo-watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2A9B58BE22684D9C00AEE9AA /* RxBus-Demo-watchOS Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A9B58D222684D9D00AEE9AA /* Build configuration list for PBXNativeTarget "RxBus-Demo-watchOS Extension" */;
+			buildPhases = (
+				083215CAF7A94964D55EB82A /* [CP] Check Pods Manifest.lock */,
+				2A9B58BB22684D9C00AEE9AA /* Sources */,
+				2A9B58BC22684D9C00AEE9AA /* Frameworks */,
+				2A9B58BD22684D9C00AEE9AA /* Resources */,
+				BF61C0C805339FAE46D9FC2C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RxBus-Demo-watchOS Extension";
+			productName = "RxBus-Demo-watchOS Extension";
+			productReference = 2A9B58BF22684D9C00AEE9AA /* RxBus-Demo-watchOS Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		8394D7C01F7CF3140078A45B /* RxBus-Demo-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8394D7D31F7CF3140078A45B /* Build configuration list for PBXNativeTarget "RxBus-Demo-iOS" */;
@@ -355,10 +503,12 @@
 				8394D7BE1F7CF3140078A45B /* Frameworks */,
 				8394D7BF1F7CF3140078A45B /* Resources */,
 				0606107BD36A7B4CA5115B23 /* [CP] Embed Pods Frameworks */,
+				2A9B58D522684D9D00AEE9AA /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2A9B58CC22684D9D00AEE9AA /* PBXTargetDependency */,
 			);
 			name = "RxBus-Demo-iOS";
 			productName = "RxBus-Demo-iOS";
@@ -430,6 +580,14 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8394D8191F7DED2E0078A45B;
 					};
+					2A9B58B222684D9B00AEE9AA = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					2A9B58BE22684D9C00AEE9AA = {
+						CreatedOnToolsVersion = 10.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					8394D7C01F7CF3140078A45B = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
@@ -464,6 +622,8 @@
 				2A9B58702268271F00AEE9AA /* RxBus-Demo-macOS-Tests */,
 				8394D8191F7DED2E0078A45B /* RxBus-Demo-tvOS */,
 				2A9B587E2268483000AEE9AA /* RxBus-Demo-tvOS-Tests */,
+				2A9B58B222684D9B00AEE9AA /* RxBus-Demo-watchOS */,
+				2A9B58BE22684D9C00AEE9AA /* RxBus-Demo-watchOS Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -487,6 +647,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9B58B122684D9B00AEE9AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9B58B922684D9C00AEE9AA /* Assets.xcassets in Resources */,
+				2A9B58B722684D9B00AEE9AA /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A9B58BD22684D9C00AEE9AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9B58C922684D9D00AEE9AA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +716,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		083215CAF7A94964D55EB82A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxBus-Demo-watchOS Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		1C045D652B9A827EE7FB3B48 /* [CP] Embed Pods Frameworks */ = {
@@ -759,6 +958,52 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-macOS/Pods-RxBus-Demo-macOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9AC9850575BC43187736C4B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxBus-Demo-watchOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF61C0C805339FAE46D9FC2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-watchOS Extension/Pods-RxBus-Demo-watchOS Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxBus-watchOS/RxBus.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift-watchOS/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-watchOS Extension/Pods-RxBus-Demo-watchOS Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E06EFC777E48B45D86456579 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -850,6 +1095,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A9B58BB22684D9C00AEE9AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A9B58C722684D9C00AEE9AA /* ExtensionDelegate.swift in Sources */,
+				2A9B58C522684D9C00AEE9AA /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8394D7BD1F7CF3140078A45B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -895,9 +1149,27 @@
 			target = 8394D8191F7DED2E0078A45B /* RxBus-Demo-tvOS */;
 			targetProxy = 2A9B58842268483000AEE9AA /* PBXContainerItemProxy */;
 		};
+		2A9B58C222684D9C00AEE9AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9B58BE22684D9C00AEE9AA /* RxBus-Demo-watchOS Extension */;
+			targetProxy = 2A9B58C122684D9C00AEE9AA /* PBXContainerItemProxy */;
+		};
+		2A9B58CC22684D9D00AEE9AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A9B58B222684D9B00AEE9AA /* RxBus-Demo-watchOS */;
+			targetProxy = 2A9B58CB22684D9D00AEE9AA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2A9B58B522684D9B00AEE9AA /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A9B58B622684D9B00AEE9AA /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		8394D7C81F7CF3140078A45B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1073,6 +1345,104 @@
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-tvOS.app/RxBus-Demo-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 12.2;
+			};
+			name = Release;
+		};
+		2A9B58CE22684D9D00AEE9AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C38A581FDC969B7F338E4161 /* Pods-RxBus-Demo-watchOS.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = RxBus_Demo_watchOS_Extension;
+				INFOPLIST_FILE = "RxBus-Demo-watchOS/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		2A9B58CF22684D9D00AEE9AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C80812F205C2ED195215FD64 /* Pods-RxBus-Demo-watchOS.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				IBSC_MODULE = RxBus_Demo_watchOS_Extension;
+				INFOPLIST_FILE = "RxBus-Demo-watchOS/Info.plist";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Release;
+		};
+		2A9B58D022684D9D00AEE9AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D74688327C732551CCA89C66 /* Pods-RxBus-Demo-watchOS Extension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "RxBus-Demo-watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
+			};
+			name = Debug;
+		};
+		2A9B58D122684D9D00AEE9AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC86FCBA53C35A9808AF3615 /* Pods-RxBus-Demo-watchOS Extension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "RxBus-Demo-watchOS Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 5.2;
 			};
 			name = Release;
 		};
@@ -1313,6 +1683,24 @@
 			buildConfigurations = (
 				2A9B58862268483000AEE9AA /* Debug */,
 				2A9B58872268483000AEE9AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9B58D222684D9D00AEE9AA /* Build configuration list for PBXNativeTarget "RxBus-Demo-watchOS Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9B58D022684D9D00AEE9AA /* Debug */,
+				2A9B58D122684D9D00AEE9AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A9B58D422684D9D00AEE9AA /* Build configuration list for PBXNativeTarget "RxBus-Demo-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A9B58CE22684D9D00AEE9AA /* Debug */,
+				2A9B58CF22684D9D00AEE9AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
