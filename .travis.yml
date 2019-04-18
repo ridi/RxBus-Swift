@@ -17,7 +17,7 @@ matrix:
 
 script:
   - set -o pipefail
-  - xcodebuild "$ACTION" -workspace WKJavaScriptController-Demo.xcodeproj/project.xcworkspace -scheme "$SCHEME" -sdk "$SDK" -destination "$DEST" -configuration Release ENABLE_TESTABILITY=YES | xcpretty
+  - xcodebuild "$ACTION" -workspace RxBus-Demo.xcodeproj/project.xcworkspace -scheme "$SCHEME" -sdk "$SDK" -destination "$DEST" -configuration Release ENABLE_TESTABILITY=YES | xcpretty
 
 notifications:
   email: false
