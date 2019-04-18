@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2A9B58702268271F00AEE9AA"
+               BuildableName = "RxBus-Demo-macOS-Tests.xctest"
+               BlueprintName = "RxBus-Demo-macOS-Tests"
+               ReferencedContainer = "container:RxBus-Demo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

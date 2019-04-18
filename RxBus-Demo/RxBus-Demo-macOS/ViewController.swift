@@ -26,6 +26,10 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if NSClassFromString("XCTest") != nil {
+            return
+        }
+        
         let bus = RxBus.shared
         
         // Event subscription/posting

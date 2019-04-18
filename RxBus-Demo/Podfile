@@ -15,6 +15,11 @@ target 'RxBus-Demo-macOS' do
     pod 'RxBus', :path => '../'
 end
 
+target 'RxBus-Demo-macOS-Tests' do
+  platform :osx, '10.10'
+  pod 'RxBus', :path => '../'
+end
+
 target 'RxBus-Demo-tvOS' do
     platform :tvos, '9.0'
     pod 'RxBus', :path => '../'
