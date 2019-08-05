@@ -1,17 +1,17 @@
 language: objective-c
-osx_image: xcode10
+osx_image: xcode10.2
 
 install:
   - cd ./RxBus-Demo; pod install
 
 matrix:
   include:
-    - env: JOB="XCODE" DEST="OS=12.0,name=iPhone X" SCHEME="RxBus-Demo-iOS" ACTION="build-for-testing"
-      osx_image: xcode10
-    - env: JOB="XCODE" DEST="arch=x86_64" SCHEME="RxBus-Demo-macOS" ACTION="build-for-testing"
-      osx_image: xcode10
-    - env: JOB="XCODE" DEST="OS=11.0,name=Apple TV 4K" SCHEME="RxBus-Demo-tvOS" ACTION="build-for-testing"
-      osx_image: xcode10
+    - env: JOB="XCODE" DEST="OS=12.0,name=iPhone X" SCHEME="RxBus-Demo-iOS-Tests" ACTION="build-for-testing"
+      osx_image: xcode10.2
+    - env: JOB="XCODE" DEST="arch=x86_64" SCHEME="RxBus-Demo-macOS-Tests" ACTION="build-for-testing"
+      osx_image: xcode10.2
+    - env: JOB="XCODE" DEST="OS=11.0,name=Apple TV 4K" SCHEME="RxBus-Demo-tvOS-Tests" ACTION="build-for-testing"
+      osx_image: xcode10.2
 
 script:
   - set -o pipefail
@@ -21,5 +21,5 @@ notifications:
   email: false
   slack:
     rooms:
-      - 'rididev:KMm0EBQYY1ThicCJo0CwYb5U'
+      - "EK5NtQQPakAybbidX2MZT9050C1Rn7EEnRg0K7O8AsDL/Lkn2Ruy7fPL1bqXVPKjQW8WztPWxIFRe4DD0R9dlxbR05GeQowpOP8an0P0/NI/mrNmuQNkZ18tP3c+F90Zi8oj7rcPhtl8YuDSdzXyWqHa70HEVbrZVd5eXY5PIWu/ujprixQu5Lwuh2fRl88ZOOLbIvsByfKabPPiFjZy3CMbl1CE6qY4aoTmd56v3+KEeggaX3ZfHWwfkqBqLCmve4UhraX1rlFb8HJnVIfL3aKA/Bd4Zih2zCzqgQ2M+lbwrZFVPCkTl41C2VAc6xP6C69yEqHhKhNsPgbH40chmQdF7MG7TPQEz6JrHmVUS99ii800ExD2ZldIsLQlv/dSBrM44OFoa81ADvTF817uoHnw1jpTels8lZ8F1p3HmBlFmzmPmnjYu7yzV/DVbe9zsYqopdvpHPbuDfS7NEbK6srZYstsX+uccQ5te/CpkC+OzB4OcBe81+YYmDsxw2pWJR6ekqw86sNTByI7YgsRhTJcbM9vWq5F7J0sxnQHPACKYiK3RWKdKBBEVJooC2sjUykfTr4OhUrx3PaGICS+2lgvgOY+OgYivXxt+RxjO4T7JfdeMJZd457J/0joKn6qnX2m0tX/TGz1MW8Ig166MHpvG56u/GDdvwXZPO/lSdg="
     on_success: change
