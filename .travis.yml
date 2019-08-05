@@ -2,7 +2,7 @@ language: objective-c
 osx_image: xcode10.2
 
 install:
-  - cd ./RxBus-Demo; pod install
+  - cd ./RxBus-Demo; pod update
 
 matrix:
   include:
@@ -21,5 +21,5 @@ notifications:
   email: false
   slack:
     rooms:
-      - "EK5NtQQPakAybbidX2MZT9050C1Rn7EEnRg0K7O8AsDL/Lkn2Ruy7fPL1bqXVPKjQW8WztPWxIFRe4DD0R9dlxbR05GeQowpOP8an0P0/NI/mrNmuQNkZ18tP3c+F90Zi8oj7rcPhtl8YuDSdzXyWqHa70HEVbrZVd5eXY5PIWu/ujprixQu5Lwuh2fRl88ZOOLbIvsByfKabPPiFjZy3CMbl1CE6qY4aoTmd56v3+KEeggaX3ZfHWwfkqBqLCmve4UhraX1rlFb8HJnVIfL3aKA/Bd4Zih2zCzqgQ2M+lbwrZFVPCkTl41C2VAc6xP6C69yEqHhKhNsPgbH40chmQdF7MG7TPQEz6JrHmVUS99ii800ExD2ZldIsLQlv/dSBrM44OFoa81ADvTF817uoHnw1jpTels8lZ8F1p3HmBlFmzmPmnjYu7yzV/DVbe9zsYqopdvpHPbuDfS7NEbK6srZYstsX+uccQ5te/CpkC+OzB4OcBe81+YYmDsxw2pWJR6ekqw86sNTByI7YgsRhTJcbM9vWq5F7J0sxnQHPACKYiK3RWKdKBBEVJooC2sjUykfTr4OhUrx3PaGICS+2lgvgOY+OgYivXxt+RxjO4T7JfdeMJZd457J/0joKn6qnX2m0tX/TGz1MW8Ig166MHpvG56u/GDdvwXZPO/lSdg="
+      - "j5ENe3Az8JUQ1WxRHGXknNJt9YRJEoX2RpNX/qj/sAXMPMd8DJccoatAPUR/zwTKnNeWgnviokRkwIXu2G8YtPgTN+DjKw8yqG4X2z0PlNWmc/SZHUW/KQ7erhe2ShQ3vhP7+zlW/kGtyOqMVDU6kTFbImAWZsRGhRVC+3n0sXUCP3RxDKm/M9YZKrJzY/ezbKqX7PPqZ2xbO8PKPHJCuhT7UBrgqoBXiynNk48BOieRpIl6l+d3iH2/vuzkufeJjlbuMoxLmU1k2HOroK7cXIKKFPsAnqydK1bsPttrRkujSj3GuRtl8pmVlf6PUUIwd7pDTGLlmJbygqOEwv+w5M5nzGvZOOUFisKnfkfORFB6yoCsFVz3AeWERY0cBL4N9q8SJ+pTUy/2oX0pNtuMHlp/X6CWno51lqRRQ3o2IbvRUyB2fJeRoHlXJZIILQaIl9cQ9f9MaPvArzseUveUoJAyBjT4+hOB/jQqVp9voZlO6HxHf1Tyx7dVR7XtgnG+xdSpMv72mY5RXXm+Jm2BG3/xW+1NfYOaRr49HWMizmPfcx4j0jh/sMeggH7fJB2hQ8PSx+pnvmiWS6yGuZ1Lkoj5XyJ/yBk7RsoMk8/HGBJNIGXynW3R2OWbYgvj53ttM0YWnwKWow/cCxhVvmBwFVVmy9+XDcWZslbv1E9ZTks="
     on_success: change
