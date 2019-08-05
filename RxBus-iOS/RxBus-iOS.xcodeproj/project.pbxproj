@@ -9,11 +9,9 @@
 /* Begin PBXBuildFile section */
 		2A2CED9822F839CB004B46FE /* RxBus_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A2CED9622F839CB004B46FE /* RxBus_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2A2CED9F22F839EE004B46FE /* RxBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CED9E22F839ED004B46FE /* RxBus.swift */; };
-		2A2CEDA622F83A06004B46FE /* RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2CEDA122F83A06004B46FE /* RxTest.framework */; };
 		2A2CEDA722F83A06004B46FE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2CEDA222F83A06004B46FE /* RxCocoa.framework */; };
 		2A2CEDA822F83A06004B46FE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2CEDA322F83A06004B46FE /* RxSwift.framework */; };
 		2A2CEDA922F83A06004B46FE /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2CEDA422F83A06004B46FE /* RxRelay.framework */; };
-		2A2CEDAA22F83A06004B46FE /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A2CEDA522F83A06004B46FE /* RxBlocking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +19,9 @@
 		2A2CED9622F839CB004B46FE /* RxBus_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxBus_iOS.h; sourceTree = "<group>"; };
 		2A2CED9722F839CB004B46FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2CED9E22F839ED004B46FE /* RxBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxBus.swift; path = ../../RxBus/RxBus.swift; sourceTree = "<group>"; };
-		2A2CEDA122F83A06004B46FE /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = ../Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
 		2A2CEDA222F83A06004B46FE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		2A2CEDA322F83A06004B46FE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		2A2CEDA422F83A06004B46FE /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = ../Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		2A2CEDA522F83A06004B46FE /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = ../Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,11 +29,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A2CEDA622F83A06004B46FE /* RxTest.framework in Frameworks */,
 				2A2CEDA722F83A06004B46FE /* RxCocoa.framework in Frameworks */,
 				2A2CEDA822F83A06004B46FE /* RxSwift.framework in Frameworks */,
 				2A2CEDA922F83A06004B46FE /* RxRelay.framework in Frameworks */,
-				2A2CEDAA22F83A06004B46FE /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,11 +68,9 @@
 		2A2CEDA022F83A06004B46FE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2A2CEDA522F83A06004B46FE /* RxBlocking.framework */,
 				2A2CEDA222F83A06004B46FE /* RxCocoa.framework */,
 				2A2CEDA422F83A06004B46FE /* RxRelay.framework */,
 				2A2CEDA322F83A06004B46FE /* RxSwift.framework */,
-				2A2CEDA122F83A06004B46FE /* RxTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
