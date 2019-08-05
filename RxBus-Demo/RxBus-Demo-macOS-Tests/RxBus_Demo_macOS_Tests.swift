@@ -38,7 +38,9 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
         let array = NSMutableArray()
         let manager = UndoManager()
         array.add(0)
-        manager.registerUndo(withTarget: array, handler: ({ _ in }))
+        if #available(OSX 10.11, *) {
+            manager.registerUndo(withTarget: array, handler: ({ _ in }))
+        }
         manager.undo()
     }
     

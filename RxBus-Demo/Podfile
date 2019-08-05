@@ -1,12 +1,12 @@
 use_frameworks!
 
 target 'RxBus-Demo-iOS' do
-    platform :ios, '8.0'
-    pod 'RxBus', :path => '../'
+  platform :ios, '8.0'
+  pod 'RxBus', :path => '../'
 
-    target 'RxBus-Demo-iOS-Tests' do
-      inherit! :search_paths
-    end
+  target 'RxBus-Demo-iOS-Tests' do
+    inherit! :search_paths
+  end
 end
 
 target 'RxBus-Demo-macOS' do
