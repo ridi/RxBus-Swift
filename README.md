@@ -11,7 +11,6 @@ Event bus framework supports sticky events and subscribers priority based on RxS
 - iOS8+
 - macOS 10.10+
 - tvOS 9.0+
-- watchOS 3.0+
 
 ## Installation
 This library is distributed by [CocoaPods](https://cocoapods.org).
