@@ -417,29 +417,35 @@
 				TargetAttributes = {
 					2A71121F22646D70005100C3 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8394D7C01F7CF3140078A45B;
 					};
 					2A9B58702268271F00AEE9AA = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8394D7DC1F7DD4030078A45B;
 					};
 					2A9B587E2268483000AEE9AA = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8394D8191F7DED2E0078A45B;
 					};
 					8394D7C01F7CF3140078A45B = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					8394D7DC1F7DD4030078A45B = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					8394D8191F7DED2E0078A45B = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -546,16 +552,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxBus-tvOS/RxBus.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-tvOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -706,16 +708,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-macOS-Tests/Pods-RxBus-Demo-macOS-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxBus-macOS/RxBus.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -804,16 +802,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS-Tests/Pods-RxBus-Demo-iOS-Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/RxBus-iOS/RxBus.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -951,7 +945,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-iOS.app/RxBus-Demo-iOS";
 			};
@@ -974,7 +968,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-iOS.app/RxBus-Demo-iOS";
 			};
@@ -1000,7 +994,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-macOS.app/Contents/MacOS/RxBus-Demo-macOS";
 			};
 			name = Debug;
@@ -1024,7 +1018,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-macOS.app/Contents/MacOS/RxBus-Demo-macOS";
 			};
 			name = Release;
@@ -1046,7 +1040,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-tvOS.app/RxBus-Demo-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 12.2;
@@ -1069,7 +1063,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS-Tests.RxBus-Demo-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxBus-Demo-tvOS.app/RxBus-Demo-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 12.2;
@@ -1199,7 +1193,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1215,7 +1209,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1232,7 +1226,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1249,7 +1243,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1264,7 +1258,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -1281,7 +1275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ridi.RxBus-Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
