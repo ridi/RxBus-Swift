@@ -46,7 +46,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
     }
@@ -59,7 +59,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             executeExpectation.fulfill()
         }.disposed(by: disposeBag)
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
     }
@@ -91,7 +91,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(event: Events.Purchased(tid: 1001))
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssert(actual.elementsEqual(expect))
         XCTAssertEqual(bus.count, 5)
@@ -104,7 +104,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         sendSystemNotification()
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
     }
@@ -117,7 +117,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(notificationName: .UserNotification)
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
     }
@@ -130,7 +130,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             executeExpectation.fulfill()
         }.disposed(by: disposeBag)
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
     }
@@ -162,7 +162,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(notificationName: .UserNotification)
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssert(actual.elementsEqual(expect))
         XCTAssertEqual(bus.count, 5)
@@ -182,7 +182,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(event: Events.Purchased(tid: 1003), sticky: true)
         
-        wait(for: [executeExpectation], timeout: 1.0)
+        wait(for: [executeExpectation], timeout: 2.0)
     }
     
     func testThreadSafe() {
@@ -247,7 +247,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             executeExpectation.fulfill()
         }
         
-        wait(for: [executeExpectation], timeout: 5.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, callCount)
     }
