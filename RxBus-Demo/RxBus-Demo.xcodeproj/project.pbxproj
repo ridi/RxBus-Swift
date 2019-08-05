@@ -293,7 +293,6 @@
 				2A71121C22646D70005100C3 /* Sources */,
 				2A71121D22646D70005100C3 /* Frameworks */,
 				2A71121E22646D70005100C3 /* Resources */,
-				EAB7A3FC00715208F47D563C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,7 +312,6 @@
 				2A9B586D2268271F00AEE9AA /* Sources */,
 				2A9B586E2268271F00AEE9AA /* Frameworks */,
 				2A9B586F2268271F00AEE9AA /* Resources */,
-				7EAD0F1A2506C1D0F622BA50 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -333,7 +331,6 @@
 				2A9B587B2268483000AEE9AA /* Sources */,
 				2A9B587C2268483000AEE9AA /* Frameworks */,
 				2A9B587D2268483000AEE9AA /* Resources */,
-				1C045D652B9A827EE7FB3B48 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -546,26 +543,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS/Pods-RxBus-Demo-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1C045D652B9A827EE7FB3B48 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxBus-tvOS/RxBus.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-tvOS/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-tvOS-Tests/Pods-RxBus-Demo-tvOS-Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		20F5846D8B80B126A8B53995 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,26 +679,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7EAD0F1A2506C1D0F622BA50 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-macOS-Tests/Pods-RxBus-Demo-macOS-Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxBus-macOS/RxBus.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-macOS-Tests/Pods-RxBus-Demo-macOS-Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8394D7D81F7D00440078A45B /* SwiftLint Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -794,26 +751,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EAB7A3FC00715208F47D563C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS-Tests/Pods-RxBus-Demo-iOS-Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxBus-iOS/RxBus.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBus.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxBus-Demo-iOS-Tests/Pods-RxBus-Demo-iOS-Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

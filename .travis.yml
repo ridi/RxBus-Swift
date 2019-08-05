@@ -7,11 +7,8 @@ install:
 matrix:
   include:
     - env: JOB="XCODE" DEST="OS=12.0,name=iPhone X" SCHEME="RxBus-Demo-iOS"
-      osx_image: xcode10.2
-    - env: JOB="XCODE" DEST="arch=x86_64" SCHEME="RxBus-Demo-macOS-sts"
-      osx_image: xcode10.2
+    - env: JOB="XCODE" DEST="arch=x86_64" SCHEME="RxBus-Demo-macOS"
     - env: JOB="XCODE" DEST="OS=11.0,name=Apple TV 4K" SCHEME="RxBus-Demo-tvOS"
-      osx_image: xcode10.2
 
 script:
   - set -o pipefail
