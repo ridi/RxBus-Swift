@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A2CEDB422F83B92004B46FE"
-               BuildableName = "RxBus_macOS.framework"
-               BlueprintName = "RxBus-macOS"
+               BuildableName = "RxBus.framework"
+               BlueprintName = "RxBus"
                ReferencedContainer = "container:RxBus-macOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A2CEDB422F83B92004B46FE"
-            BuildableName = "RxBus_macOS.framework"
-            BlueprintName = "RxBus-macOS"
+            BuildableName = "RxBus.framework"
+            BlueprintName = "RxBus"
             ReferencedContainer = "container:RxBus-macOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A2CEDB422F83B92004B46FE"
-            BuildableName = "RxBus_macOS.framework"
-            BlueprintName = "RxBus-macOS"
+            BuildableName = "RxBus.framework"
+            BlueprintName = "RxBus"
             ReferencedContainer = "container:RxBus-macOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

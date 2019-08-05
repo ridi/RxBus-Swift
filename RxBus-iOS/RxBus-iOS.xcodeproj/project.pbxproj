@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A2CED9322F839CB004B46FE /* RxBus_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBus_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2CED9322F839CB004B46FE /* RxBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2CED9622F839CB004B46FE /* RxBus_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxBus_iOS.h; sourceTree = "<group>"; };
 		2A2CED9722F839CB004B46FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2CED9E22F839ED004B46FE /* RxBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxBus.swift; path = ../../RxBus/RxBus.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		2A2CED9422F839CB004B46FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A2CED9322F839CB004B46FE /* RxBus_iOS.framework */,
+				2A2CED9322F839CB004B46FE /* RxBus.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,9 +97,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2A2CED9222F839CB004B46FE /* RxBus-iOS */ = {
+		2A2CED9222F839CB004B46FE /* RxBus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A2CED9B22F839CB004B46FE /* Build configuration list for PBXNativeTarget "RxBus-iOS" */;
+			buildConfigurationList = 2A2CED9B22F839CB004B46FE /* Build configuration list for PBXNativeTarget "RxBus" */;
 			buildPhases = (
 				2A2CED8E22F839CB004B46FE /* Headers */,
 				2A2CED8F22F839CB004B46FE /* Sources */,
@@ -110,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = "RxBus-iOS";
+			name = RxBus;
 			productName = "RxBus-iOS";
-			productReference = 2A2CED9322F839CB004B46FE /* RxBus_iOS.framework */;
+			productReference = 2A2CED9322F839CB004B46FE /* RxBus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A2CED9222F839CB004B46FE /* RxBus-iOS */,
+				2A2CED9222F839CB004B46FE /* RxBus */,
 			);
 		};
 /* End PBXProject section */
@@ -221,7 +221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -279,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -358,7 +358,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A2CED9B22F839CB004B46FE /* Build configuration list for PBXNativeTarget "RxBus-iOS" */ = {
+		2A2CED9B22F839CB004B46FE /* Build configuration list for PBXNativeTarget "RxBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A2CED9C22F839CB004B46FE /* Debug */,

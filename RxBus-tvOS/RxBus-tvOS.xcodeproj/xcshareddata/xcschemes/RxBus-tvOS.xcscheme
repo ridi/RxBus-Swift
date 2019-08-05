@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A2CEDD622F83C63004B46FE"
-               BuildableName = "RxBus_tvOS.framework"
-               BlueprintName = "RxBus-tvOS"
+               BuildableName = "RxBus.framework"
+               BlueprintName = "RxBus"
                ReferencedContainer = "container:RxBus-tvOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A2CEDD622F83C63004B46FE"
-            BuildableName = "RxBus_tvOS.framework"
-            BlueprintName = "RxBus-tvOS"
+            BuildableName = "RxBus.framework"
+            BlueprintName = "RxBus"
             ReferencedContainer = "container:RxBus-tvOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A2CEDD622F83C63004B46FE"
-            BuildableName = "RxBus_tvOS.framework"
-            BlueprintName = "RxBus-tvOS"
+            BuildableName = "RxBus.framework"
+            BlueprintName = "RxBus"
             ReferencedContainer = "container:RxBus-tvOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

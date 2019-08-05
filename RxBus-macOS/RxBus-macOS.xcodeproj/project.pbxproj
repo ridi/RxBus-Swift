@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A2CEDB522F83B92004B46FE /* RxBus_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBus_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2CEDB522F83B92004B46FE /* RxBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2CEDB822F83B92004B46FE /* RxBus_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxBus_macOS.h; sourceTree = "<group>"; };
 		2A2CEDB922F83B92004B46FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2CEDC022F83B9A004B46FE /* RxBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxBus.swift; path = ../../RxBus/RxBus.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		2A2CEDB622F83B92004B46FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A2CEDB522F83B92004B46FE /* RxBus_macOS.framework */,
+				2A2CEDB522F83B92004B46FE /* RxBus.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,9 +97,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2A2CEDB422F83B92004B46FE /* RxBus-macOS */ = {
+		2A2CEDB422F83B92004B46FE /* RxBus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A2CEDBD22F83B92004B46FE /* Build configuration list for PBXNativeTarget "RxBus-macOS" */;
+			buildConfigurationList = 2A2CEDBD22F83B92004B46FE /* Build configuration list for PBXNativeTarget "RxBus" */;
 			buildPhases = (
 				2A2CEDB022F83B92004B46FE /* Headers */,
 				2A2CEDB122F83B92004B46FE /* Sources */,
@@ -110,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = "RxBus-macOS";
+			name = RxBus;
 			productName = "RxBus-macOS";
-			productReference = 2A2CEDB522F83B92004B46FE /* RxBus_macOS.framework */;
+			productReference = 2A2CEDB522F83B92004B46FE /* RxBus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A2CEDB422F83B92004B46FE /* RxBus-macOS */,
+				2A2CEDB422F83B92004B46FE /* RxBus */,
 			);
 		};
 /* End PBXProject section */
@@ -221,7 +221,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -279,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -357,7 +357,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A2CEDBD22F83B92004B46FE /* Build configuration list for PBXNativeTarget "RxBus-macOS" */ = {
+		2A2CEDBD22F83B92004B46FE /* Build configuration list for PBXNativeTarget "RxBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A2CEDBE22F83B92004B46FE /* Debug */,

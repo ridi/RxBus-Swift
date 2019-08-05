@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2A2CEDD722F83C63004B46FE /* RxBus_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBus_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2CEDD722F83C63004B46FE /* RxBus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxBus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A2CEDDA22F83C63004B46FE /* RxBus_tvOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxBus_tvOS.h; sourceTree = "<group>"; };
 		2A2CEDDB22F83C63004B46FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2A2CEDE222F83C74004B46FE /* RxBus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RxBus.swift; path = ../../RxBus/RxBus.swift; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		2A2CEDD822F83C63004B46FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A2CEDD722F83C63004B46FE /* RxBus_tvOS.framework */,
+				2A2CEDD722F83C63004B46FE /* RxBus.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,9 +97,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2A2CEDD622F83C63004B46FE /* RxBus-tvOS */ = {
+		2A2CEDD622F83C63004B46FE /* RxBus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A2CEDDF22F83C63004B46FE /* Build configuration list for PBXNativeTarget "RxBus-tvOS" */;
+			buildConfigurationList = 2A2CEDDF22F83C63004B46FE /* Build configuration list for PBXNativeTarget "RxBus" */;
 			buildPhases = (
 				2A2CEDD222F83C63004B46FE /* Headers */,
 				2A2CEDD322F83C63004B46FE /* Sources */,
@@ -110,9 +110,9 @@
 			);
 			dependencies = (
 			);
-			name = "RxBus-tvOS";
+			name = RxBus;
 			productName = "RxBus-tvOS";
-			productReference = 2A2CEDD722F83C63004B46FE /* RxBus_tvOS.framework */;
+			productReference = 2A2CEDD722F83C63004B46FE /* RxBus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A2CEDD622F83C63004B46FE /* RxBus-tvOS */,
+				2A2CEDD622F83C63004B46FE /* RxBus */,
 			);
 		};
 /* End PBXProject section */
@@ -313,6 +313,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -339,6 +340,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -354,7 +356,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A2CEDDF22F83C63004B46FE /* Build configuration list for PBXNativeTarget "RxBus-tvOS" */ = {
+		2A2CEDDF22F83C63004B46FE /* Build configuration list for PBXNativeTarget "RxBus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A2CEDE022F83C63004B46FE /* Debug */,
