@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8394D7DC1F7DD4030078A45B"
-               BuildableName = "RxBus-Demo-macOS.app"
-               BlueprintName = "RxBus-Demo-macOS"
-               ReferencedContainer = "container:RxBus-Demo.xcodeproj">
+               BlueprintIdentifier = "2A2CEDD622F83C63004B46FE"
+               BuildableName = "RxBus.framework"
+               BlueprintName = "RxBus"
+               ReferencedContainer = "container:RxBus-tvOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2A9B58702268271F00AEE9AA"
-               BuildableName = "RxBus-Demo-macOS-Tests.xctest"
-               BlueprintName = "RxBus-Demo-macOS-Tests"
-               ReferencedContainer = "container:RxBus-Demo.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8394D7DC1F7DD4030078A45B"
-            BuildableName = "RxBus-Demo-macOS.app"
-            BlueprintName = "RxBus-Demo-macOS"
-            ReferencedContainer = "container:RxBus-Demo.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8394D7DC1F7DD4030078A45B"
-            BuildableName = "RxBus-Demo-macOS.app"
-            BlueprintName = "RxBus-Demo-macOS"
-            ReferencedContainer = "container:RxBus-Demo.xcodeproj">
+            BlueprintIdentifier = "2A2CEDD622F83C63004B46FE"
+            BuildableName = "RxBus.framework"
+            BlueprintName = "RxBus"
+            ReferencedContainer = "container:RxBus-tvOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -80,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8394D7DC1F7DD4030078A45B"
-            BuildableName = "RxBus-Demo-macOS.app"
-            BlueprintName = "RxBus-Demo-macOS"
-            ReferencedContainer = "container:RxBus-Demo.xcodeproj">
+            BlueprintIdentifier = "2A2CEDD622F83C63004B46FE"
+            BuildableName = "RxBus.framework"
+            BlueprintName = "RxBus"
+            ReferencedContainer = "container:RxBus-tvOS.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
