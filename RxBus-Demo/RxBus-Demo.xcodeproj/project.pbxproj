@@ -60,6 +60,7 @@
 		1DCCCE0270D015DD0663A503 /* Pods-RxBus-Demo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxBus-Demo-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxBus-Demo-tvOS/Pods-RxBus-Demo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		2A2109D6239E15490019FFBF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		2A2109D7239E15C30019FFBF /* RxBus.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = RxBus.podspec; path = ../RxBus.podspec; sourceTree = "<group>"; };
+		2A2109D8239E1A4C0019FFBF /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = CHANGELOG.md; path = ../CHANGELOG.md; sourceTree = "<group>"; };
 		2A71122022646D70005100C3 /* RxBus-Demo-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RxBus-Demo-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A71122222646D70005100C3 /* RxBus_Demo_iOS_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxBus_Demo_iOS_Tests.swift; sourceTree = "<group>"; };
 		2A71122422646D70005100C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -204,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				2A2109D6239E15490019FFBF /* README.md */,
+				2A2109D8239E1A4C0019FFBF /* CHANGELOG.md */,
 				2A2109D7239E15C30019FFBF /* RxBus.podspec */,
 				8394D7C31F7CF3140078A45B /* RxBus-Demo-iOS */,
 				2A71122122646D70005100C3 /* RxBus-Demo-iOS-Tests */,
