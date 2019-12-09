@@ -17,20 +17,10 @@ extension Notification.Name {
 }
 
 class RxBus_Demo_iOS_Tests: XCTestCase {
-    private let bus = RxBus.shared
-    private var disposeBag: DisposeBag!
-    
-    override func setUp() {
-        disposeBag = DisposeBag()
-    }
-    
-    override func tearDown() {
-        disposeBag = nil
-        bus.removeAllStickys()
-        XCTAssertEqual(bus.count, 0)
-    }
-    
     func testEventSubscriptionAndPosting() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test event subscription and posting...")
         
         bus.asObservable(event: Events.LoggedIn.self).subscribe { event in
@@ -41,9 +31,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testStickyEvent() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test sticky event...")
         
         bus.post(event: Events.LoggedOut(), sticky: true)
@@ -54,9 +50,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testEventSubscriptionPriority() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test event subscription priority...")
         
         let expect = [10, 2, 1, 0, -1]
@@ -87,9 +89,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         
         XCTAssert(actual.elementsEqual(expect))
         XCTAssertEqual(bus.count, 5)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testSystemNotificationSubscriptionAndPosting() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test system notification subscription and posting...")
         
         bus.asObservable(notificationName: UIPasteboard.changedNotification).subscribe { event in
@@ -100,9 +108,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testUserNotificationSubscriptionAndPosting() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test user notification subscription and posting...")
         
         bus.asObservable(notificationName: .UserNotification).subscribe { event in
@@ -113,9 +127,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testStickyUserNotification() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test sticky user notification...")
         
         bus.post(notificationName: .UserNotification, sticky: true)
@@ -126,9 +146,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         wait(for: [executeExpectation], timeout: 2.0)
         
         XCTAssertEqual(bus.count, 1)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testUserNotificationSubscriptionPriority() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test user notification subscription priority...")
         
         let expect = [10, 2, 1, 0, -1]
@@ -159,9 +185,15 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         
         XCTAssert(actual.elementsEqual(expect))
         XCTAssertEqual(bus.count, 5)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testSticky() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test sticky...")
         
         bus.post(event: Events.Purchased(tid: 1000), sticky: true)
@@ -176,66 +208,74 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         bus.post(event: Events.Purchased(tid: 1003), sticky: true)
         
         wait(for: [executeExpectation], timeout: 2.0)
+        
+        XCTAssertEqual(bus.count, 1)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
     
     func testThreadSafe() {
+        let bus = RxBus.shared
+        var disposeBag: DisposeBag! = DisposeBag()
+        
         let executeExpectation = XCTestExpectation(description: "Test thread safe...")
         
         var callCount = 0
         for i in stride(from: 0, to: 100, by: 2) {
             DispatchQueue(label: "LoggedOut \(i)").async {
-                self.bus.asObservable(event: Events.LoggedOut.self)
+                bus.asObservable(event: Events.LoggedOut.self)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: disposeBag)
             }
             DispatchQueue(label: "LoggedOut \(i + 1)").async {
-                self.bus.asObservable(event: Events.LoggedOut.self)
+                bus.asObservable(event: Events.LoggedOut.self)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: disposeBag)
             }
             DispatchQueue(label: "LoggedIn \(i)").async {
-                self.bus.asObservable(event: Events.LoggedIn.self)
+                bus.asObservable(event: Events.LoggedIn.self)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: disposeBag)
             }
             DispatchQueue(label: "LoggedIn \(i + 1)").async {
-                self.bus.asObservable(event: Events.LoggedIn.self, priority: i + 1)
+                bus.asObservable(event: Events.LoggedIn.self, priority: i + 1)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: disposeBag)
             }
             DispatchQueue(label: "UIPasteboard.changedNotification \(i)").async {
-                self.bus.asObservable(notificationName: UIPasteboard.changedNotification)
+                bus.asObservable(notificationName: UIPasteboard.changedNotification)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: disposeBag)
             }
             DispatchQueue(label: "UIPasteboard.changedNotification \(i + 1)").async {
-                self.bus.asObservable(notificationName: UIPasteboard.changedNotification, priority: i + 1)
+                bus.asObservable(notificationName: UIPasteboard.changedNotification, priority: i + 1)
                     .subscribeOn(MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
-                    .disposed(by: self.disposeBag)
+                    .disposed(by: disposeBag)
             }
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-            self.bus.post(event: Events.LoggedOut())
-            self.bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
+            bus.post(event: Events.LoggedOut())
+            bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
             UIPasteboard.general.string = "Test"
             executeExpectation.fulfill()
         }
@@ -243,5 +283,8 @@ class RxBus_Demo_iOS_Tests: XCTestCase {
         wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, callCount)
+        
+        disposeBag = nil
+        XCTAssertEqual(bus.count, 0)
     }
 }
