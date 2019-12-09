@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode10.2
 
 install:
+  - brew install swiftlint
   - cd ./RxBus-Demo; pod update
 
 matrix:
