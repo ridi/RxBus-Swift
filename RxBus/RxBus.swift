@@ -155,7 +155,7 @@ public final class RxBus: CustomStringConvertible {
                 let eventName = sliceEventName(fromKey: key)
                 _ = subjects.removeValue(forKey: key)
                 _ = subscriptionCounts.removeValue(forKey: key)
-                if subscriptionCounts.keys.first(where: { $0.hasPrefix(eventName) }) == nil {
+                if !subscriptionCounts.keys.contains(where: { $0.hasPrefix(eventName) }) {
                     if let nsObserver = nsObservers[eventName] {
                         NotificationCenter.default.removeObserver(nsObserver)
                         _ = nsObservers.removeValue(forKey: eventName)

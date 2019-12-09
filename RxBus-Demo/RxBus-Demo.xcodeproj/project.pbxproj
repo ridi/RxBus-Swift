@@ -581,7 +581,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\n    current=$(swiftlint version)\n    require=\"0.27.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi\n";
+			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\n    current=$(swiftlint version)\n    require=\"0.38.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi\n";
 		};
 		2A3F3F9221B4DFEF00052341 /* Swiftlint Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -599,7 +599,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\ncurrent=$(swiftlint version)\nrequire=\"0.27.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi\n";
+			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\ncurrent=$(swiftlint version)\nrequire=\"0.38.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi\n";
 		};
 		35DA06D169D42ADE9AAFB9AA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -695,7 +695,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\n    current=$(swiftlint version)\n    require=\"0.27.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi\n";
+			shellScript = "function toVersion { echo -e \"$@\" | awk -F. '{ printf(\"%d%03d%03d%03d\", $1,$2,$3,$4); }'; }\nif which swiftlint >/dev/null; then\n    current=$(swiftlint version)\n    require=\"0.38.0\"\n    if [ $(toVersion \"$current\") -ge $(toVersion \"$require\") ]; then\n        cd \"${PROJECT_DIR}/../\"\n        swiftlint\n    else\n        echo \"SwiftLint requires a SwiftLint version of >= $require. You are on $current.\"\n        echo \"Please update using 'brew upgrade swiftlint'.\"\n        exit 101\n    fi\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\n    exit 100\nfi\n";
 		};
 		96AC23007B18748BEA673448 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
