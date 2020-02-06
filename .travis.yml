@@ -3,7 +3,7 @@ osx_image: xcode10.2
 
 install:
   - brew update; brew outdated swiftlint || brew upgrade swiftlint
-  - cd ./RxBus-Demo; pod update
+  - cd ./Demo; pod update
 
 matrix:
   include:
