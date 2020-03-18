@@ -5,13 +5,13 @@
 reporter: "xcode"
 
 included:
-  - RxBus
-  - RxBus-Demo/RxBus-Demo-iOS
-  - RxBus-Demo/RxBus-Demo-macOS
-  - RxBus-Demo/RxBus-Demo-tvOS
+  - Sources
+  - Demo/RxBus-Demo-iOS
+  - Demo/RxBus-Demo-macOS
+  - Demo/RxBus-Demo-tvOS
 
 excluded:
-  - RxBus-Demo/Pods
+  - Demo/Pods
 
 disabled_rules:
   - file_length # Files should not span too many lines.
