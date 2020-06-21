@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * None.
 
+## [1.2.1 (2020-06-21)]
+
+### Fixed
+
+- Fixes an issue can be crash as EXC_BAD_ACCESS.
+
 ## [1.2.1 (2020-04-13)]
 
 ### Added

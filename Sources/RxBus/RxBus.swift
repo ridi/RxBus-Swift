@@ -40,7 +40,7 @@ private class SynchronizedValues<Key: Hashable, Value: Any>: Sequence {
     }
     
     func removeValue(forKey key: Key) -> Value? {
-        let value = _values[key]
+        let value = self[key]
         accessQueue.async(flags: .barrier) {
             self._values.removeValue(forKey: key)
         }
