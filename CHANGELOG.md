@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * None.
 
+## [1.3.1 (2020-06-24)]
+
+### Changed
+
+- Use upToNextMajor for RxSwift on Package.swift
+
+
 ## [1.3.0 (2020-06-24)]
 
 ### Changed
@@ -86,6 +93,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - First release.
 
 [Unreleased]: https://github.com/ridi/WKJavaScriptController/compare/1.3.0...HEAD
+[1.3.1 (2020-06-24)]: https://github.com/ridi/RxBus-Swift/compare/1.3.0...1.3.1
 [1.3.0 (2020-06-24)]: https://github.com/ridi/RxBus-Swift/compare/1.2.2...1.3.0
 [1.2.2 (2020-06-21)]: https://github.com/ridi/RxBus-Swift/compare/1.2.1...1.2.2
 [1.2.1 (2020-04-13)]: https://github.com/ridi/RxBus-Swift/compare/1.2.0...1.2.1
