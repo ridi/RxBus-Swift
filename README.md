@@ -6,7 +6,7 @@ Event bus framework supports sticky events and subscribers priority based on RxS
 
 - Xcode 10.2+
 - Swift 5.0+
-- iOS8+
+- iOS 9.0+
 - macOS 10.10+
 - tvOS 9.0+
 

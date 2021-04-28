@@ -7,7 +7,7 @@ let package = Package(
     name: "RxBus",
     platforms: [
         .macOS(.v10_10),
-        .iOS(.v8),
+        .iOS(.v9),
         .tvOS(.v9),
     ],
     products: [
