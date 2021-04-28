@@ -2,11 +2,6 @@
 
 Event bus framework supports sticky events and subscribers priority based on RxSwift.
 
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/RxBus.svg?style=flat)](https://cocoadocs.org/docsets/RxBus)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Platform](https://img.shields.io/cocoapods/p/RxBus.svg?style=flat)](https://cocoadocs.org/docsets/RxBus)
-[![License](https://img.shields.io/cocoapods/l/RxBus.svg?style=flat)](https://cocoadocs.org/docsets/RxBus)
-
 ## Requirements
 
 - Xcode 10.2+
@@ -17,32 +12,12 @@ Event bus framework supports sticky events and subscribers priority based on RxS
 
 ## Installation
 
-This library is distributed by [CocoaPods](https://cocoapods.org).
+### Swift Package Manager
 
- CocoaPods is a dependency manager for Cocoa projects. You can install it with the following command:
-
-```
-$ gem install cocoapods
-```
-
-To integrate RxBus into your Xcode project using CocoaPods, specify it in your Podfile:
-
-```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-# platform :osx, '10.10'
-# platform :tvos, '9.0'
-use_frameworks!
-
-target '<Target name in your project>' do
-    pod 'RxBus'
-end
-```
-
-Then, run the following command:
-
-```
-$ pod install
+```swift
+dependencies: [
+    .package(url: "https://github.com/ridi/RxBus-swift.git", .upToNextMinor(from: "0.1.0"))
+]
 ```
 
 ## Usage
