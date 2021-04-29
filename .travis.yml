@@ -12,6 +12,7 @@ matrix:
 
 script:
   - set -o pipefail
+  - cd Demo
   - xcodebuild test -workspace RxBus-Demo.xcworkspace -scheme "$SCHEME" -destination "$DEST" -configuration Release ENABLE_TESTABILITY=YES | xcpretty
 
 notifications:
