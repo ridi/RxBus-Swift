@@ -239,7 +239,7 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
         for i in stride(from: 0, to: 100, by: 2) {
             DispatchQueue(label: "LoggedOut \(i)").async {
                 bus.asObservable(event: Events.LoggedOut.self)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -247,7 +247,7 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "LoggedOut \(i + 1)").async {
                 bus.asObservable(event: Events.LoggedOut.self)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -255,7 +255,7 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "LoggedIn \(i)").async {
                 bus.asObservable(event: Events.LoggedIn.self)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -263,7 +263,7 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "LoggedIn \(i + 1)").async {
                 bus.asObservable(event: Events.LoggedIn.self, priority: i + 1)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -271,7 +271,7 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "NSUndoManagerDidUndoChange \(i)").async {
                 bus.asObservable(notificationName: .NSUndoManagerDidUndoChange)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -279,7 +279,7 @@ class RxBus_Demo_macOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "NSUndoManagerDidUndoChange \(i + 1)").async {
                 bus.asObservable(notificationName: .NSUndoManagerDidUndoChange, priority: i + 1)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
