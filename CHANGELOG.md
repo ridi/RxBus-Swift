@@ -9,11 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 * None.
 
-## [1.3.2 (2021-04-28)]
+## [1.3.2 (2021-04-29)]
 
 ### Changed
 
 - Update RxSwift to 6.1.0
+- Bump deployment target to iOS 9
 
 ## [1.3.1 (2020-06-24)]
 
@@ -99,7 +100,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - First release.
 
 [Unreleased]: https://github.com/ridi/RxBus-Swift/compare/1.3.2...HEAD
-[1.3.2 (2021-04-28)]: https://github.com/ridi/RxBus-Swift/compare/1.3.1...1.3.2
+[1.3.2 (2021-04-29)]: https://github.com/ridi/RxBus-Swift/compare/1.3.1...1.3.2
 [1.3.1 (2020-06-24)]: https://github.com/ridi/RxBus-Swift/compare/1.3.0...1.3.1
 [1.3.0 (2020-06-24)]: https://github.com/ridi/RxBus-Swift/compare/1.2.2...1.3.0
 [1.2.2 (2020-06-21)]: https://github.com/ridi/RxBus-Swift/compare/1.2.1...1.2.2
