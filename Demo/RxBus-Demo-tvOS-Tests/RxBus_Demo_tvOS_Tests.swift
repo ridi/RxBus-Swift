@@ -36,7 +36,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(event: Events.LoggedIn(userId: "davin.ahn"))
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, 1)
         
@@ -55,7 +55,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             executeExpectation.fulfill()
         }.disposed(by: disposeBag)
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, 1)
         
@@ -93,7 +93,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(event: Events.Purchased(tid: 1001))
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssert(actual.elementsEqual(expect))
         XCTAssertEqual(bus.count, 5)
@@ -112,7 +112,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         sendSystemNotification()
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, 1)
         
@@ -131,7 +131,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(notificationName: .UserNotification)
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, 1)
         
@@ -150,7 +150,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             executeExpectation.fulfill()
         }.disposed(by: disposeBag)
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, 1)
         
@@ -188,7 +188,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(notificationName: .UserNotification)
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssert(actual.elementsEqual(expect))
         XCTAssertEqual(bus.count, 5)
@@ -214,7 +214,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         }.disposed(by: disposeBag)
         bus.post(event: Events.Purchased(tid: 1003), sticky: true)
         
-        wait(for: [executeExpectation], timeout: 2.0)
+        wait(for: [executeExpectation], timeout: 10.0)
         
         XCTAssertEqual(bus.count, 1)
         
@@ -232,7 +232,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
         for i in stride(from: 0, to: 100, by: 2) {
             DispatchQueue(label: "LoggedOut \(i)").async {
                 bus.asObservable(event: Events.LoggedOut.self)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -240,7 +240,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "LoggedOut \(i + 1)").async {
                 bus.asObservable(event: Events.LoggedOut.self)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -248,7 +248,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "LoggedIn \(i)").async {
                 bus.asObservable(event: Events.LoggedIn.self)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -256,7 +256,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "LoggedIn \(i + 1)").async {
                 bus.asObservable(event: Events.LoggedIn.self, priority: i + 1)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -264,7 +264,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "NSUndoManagerDidUndoChange \(i)").async {
                 bus.asObservable(notificationName: .NSUndoManagerDidUndoChange)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }
@@ -272,7 +272,7 @@ class RxBus_Demo_tvOS_Tests: XCTestCase {
             }
             DispatchQueue(label: "NSUndoManagerDidUndoChange \(i + 1)").async {
                 bus.asObservable(notificationName: .NSUndoManagerDidUndoChange, priority: i + 1)
-                    .subscribeOn(MainScheduler.instance)
+                    .subscribe(on: MainScheduler.instance)
                     .subscribe { _ in
                         callCount += 1
                     }

@@ -1,9 +1,8 @@
 language: objective-c
-osx_image: xcode10.2
+osx_image: xcode11.4
 
 install:
   - brew update; brew outdated swiftlint || brew upgrade swiftlint
-  - cd ./Demo; pod update
 
 matrix:
   include:
@@ -13,7 +12,8 @@ matrix:
 
 script:
   - set -o pipefail
-  - xcodebuild test -workspace RxBus-Demo.xcworkspace -scheme "$SCHEME" -destination "$DEST" -configuration Release ENABLE_TESTABILITY=YES | xcpretty
+  - cd Demo
+  - xcodebuild test -workspace RxBus-Demo.xcworkspace -scheme "$SCHEME" -destination "$DEST" ENABLE_TESTABILITY=YES | xcpretty
 
 notifications:
   email: false
